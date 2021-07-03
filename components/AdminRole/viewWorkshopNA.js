@@ -14,7 +14,7 @@ export default class UnApprovedWorkshop extends Component {
     }
     //retrieving all workshops
     componentDidMount() {
-        axios.get('http://localhost:3001/workshop/readAllUnApprovedWorkshops/')
+        axios.get('https://conference-tool-app.herokuapp.com/workshop/readAllUnApprovedWorkshops/')
             .then(response => {
                 this.setState({ unapprovedWorkshops: response.data });
             }).catch(error => {

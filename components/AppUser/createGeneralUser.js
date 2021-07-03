@@ -35,7 +35,7 @@ class AddGeneralUser extends Component {
             "userPassword": this.state.password,
             "userContact": this.state.contact
         }
-        Axios.post('http://localhost:3001/user/addUser', user)
+        Axios.post('https://conference-tool-app.herokuapp.com/user/addUser', user)
             .then(response => {
                 alert('Data added Successfully!');
             }).catch(error => {

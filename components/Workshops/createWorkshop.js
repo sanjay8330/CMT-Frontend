@@ -62,7 +62,7 @@ class AddWorkshop extends Component {
             "downloadURL": this.state.fileURL,
             "eventStatus": this.state.eventStatus
         }
-        Axios.post('http://localhost:3001/workshop/insertWorkshop', workshop)
+        Axios.post('https://conference-tool-app.herokuapp.com/workshop/insertWorkshop', workshop)
             .then(response => {
                 alert('Workshop Details Added Successfully');
                 window.location = `/loggedHome/${this.state.conductorEmail}`

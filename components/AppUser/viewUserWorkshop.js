@@ -14,7 +14,7 @@ export default class UserWorkshop extends Component {
 
     componentDidMount() {
         //retrieving all research papers by Email ID
-        Axios.get(`http://localhost:3001/workshop/readByEmail/${this.props.match.params.id}`)
+        Axios.get(`https://conference-tool-app.herokuapp.com/workshop/readByEmail/${this.props.match.params.id}`)
             .then(response => {
                 this.setState({ workshops: response.data });
             }).catch(error => {

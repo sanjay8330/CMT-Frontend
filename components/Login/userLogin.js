@@ -23,7 +23,7 @@ class UserLogin extends Component {
     onSubmit(e) {
         e.preventDefault();
 
-        Axios.get(`http://localhost:3001/user/validateUser/${this.state.email}`)
+        Axios.get(`https://conference-tool-app.herokuapp.com/user/validateUser/${this.state.email}`)
             .then(response => {
                 this.setState({ users: response.data.data });
                 console.log(this.state.users.length);

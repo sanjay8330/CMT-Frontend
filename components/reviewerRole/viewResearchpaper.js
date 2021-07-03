@@ -16,7 +16,7 @@ export default class researchPaper extends Component {
 
     //retrieving all research
     componentDidMount() {
-        axios.get('http://localhost:3001/research/readAllResearch/')
+        axios.get('https://conference-tool-app.herokuapp.com/research/readAllResearch/')
             .then(response => {
                 this.setState({ research: response.data });
             })
@@ -24,7 +24,7 @@ export default class researchPaper extends Component {
 
     //delete() method
     delete(researchId) {
-        axios.get('http://localhost:3001/research/deleteById/' + researchId)
+        axios.get('https://conference-tool-app.herokuapp.com/research/deleteById/' + researchId)
             .then(response => {
                 alert("Are you sure you want to delete this Research Paper?");
                 this.componentDidMount();

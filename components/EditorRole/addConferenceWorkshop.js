@@ -25,7 +25,7 @@ export default class AddConferenceWorkshop extends Component {
 
     //Get all available conference names - but pass the ID
     componentDidMount(e) {
-        Axios.get('http://localhost:3001/conference/readAllConferences')
+        Axios.get('https://conference-tool-app.herokuapp.com/conference/readAllConferences')
             .then(response => {
                 this.setState({ conferenceList: response.data.data }, () => {
                     let data = [];
@@ -53,12 +53,12 @@ export default class AddConferenceWorkshop extends Component {
             "allocatedTime": this.state.allocatedTime,
             "adminApprovalStatus": this.state.adminApprovalStatus
         }
-        Axios.post('http://localhost:3001/conferenceWorkshops/insertConferenceWorkshops', conferenceWorkshop)
+        Axios.post('https://conference-tool-app.herokuapp.com/conferenceWorkshops/insertConferenceWorkshops', conferenceWorkshop)
         .then(response => {
             let updWorkshop = {
                 "eventStatus": this.state.eventStatus
             }
-            Axios.put(`http://localhost:3001/workshop/changeEventStatus/${this.props.match.params.id}`, updWorkshop)
+            Axios.put(`https://conference-tool-app.herokuapp.com/workshop/changeEventStatus/${this.props.match.params.id}`, updWorkshop)
             .then(response => {
                 alert('Workshop Added to conference & Updated');
                 window.location = "/viewEditorWorkshop";

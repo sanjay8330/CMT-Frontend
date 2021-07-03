@@ -18,12 +18,12 @@ export default class summary extends Component {
 
     //retrieving all workshops
     componentDidMount() {
-        axios.get('http://localhost:3001/workshop/readAllWorkshops/')
+        axios.get('https://conference-tool-app.herokuapp.com/workshop/readAllWorkshops/')
             .then(response => {
                 this.setState({ workshops: response.data });
             })
 
-        axios.get('http://localhost:3001/research/readAllResearch/')
+        axios.get('https://conference-tool-app.herokuapp.com/research/readAllResearch/')
             .then(response => {
                 this.setState({ research: response.data });
             })

@@ -34,7 +34,7 @@ class AddAttendees extends Component {
             "paymentAmount": this.state.payAmount,
             "paymentAccountNo": this.state.accountNo
         }
-        Axios.post('http://localhost:3001/attendee/insertAttendee', attendee)
+        Axios.post('https://conference-tool-app.herokuapp.com/attendee/insertAttendee', attendee)
             .then(response => {
                 alert('Data added Successfully!');
             }).catch(error => {

@@ -59,7 +59,7 @@ export default class UserPlusResearch extends Component {
             "userPassword": this.state.password,
             "userContact": this.state.contact
         }
-        Axios.post('http://localhost:3001/user/addUser', user)
+        Axios.post('https://conference-tool-app.herokuapp.com/user/addUser', user)
             .then(response => {
                 let research = {
                     "authorName": this.state.name,
@@ -71,7 +71,7 @@ export default class UserPlusResearch extends Component {
                     "downloadURL": this.state.fileURL,
                     "eventStatus": this.state.eventStatus
                 }
-                Axios.post('http://localhost:3001/research/insertResearch', research)
+                Axios.post('https://conference-tool-app.herokuapp.com/research/insertResearch', research)
                     .then(response => {
                         alert('User & Research Paper Added Successfully');
                         window.location = `/loggedHome/${this.state.email}`

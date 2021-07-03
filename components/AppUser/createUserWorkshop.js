@@ -68,7 +68,7 @@ export default class UserPlusWorkshop extends Component {
             "userPassword": this.state.password,
             "userContact": this.state.contact
         }
-        Axios.post('http://localhost:3001/user/addUser', user)
+        Axios.post('https://conference-tool-app.herokuapp.com/user/addUser', user)
             .then(response => {
                 let workshop = {
                     "workshopConductorName": this.state.name,
@@ -81,7 +81,7 @@ export default class UserPlusWorkshop extends Component {
                     "downloadURL": this.state.fileURL,
                     "eventStatus": this.state.eventStatus
                 }
-                Axios.post('http://localhost:3001/workshop/insertWorkshop', workshop)
+                Axios.post('https://conference-tool-app.herokuapp.com/workshop/insertWorkshop', workshop)
                     .then(response => {
                         alert('User & Workshop Details Added Successfully');
                         window.location = `/loggedHome/${this.state.email}`

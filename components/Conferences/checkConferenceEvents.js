@@ -25,7 +25,7 @@ export default class CheckConference extends Component {
     }
 
     componentDidMount() {
-        Axios.get('http://localhost:3001/conference/readAllConferences')
+        Axios.get('https://conference-tool-app.herokuapp.com/conference/readAllConferences')
             .then(response => {
                 this.setState({ conferenceList: response.data.data }, () => {
                     let data = [];

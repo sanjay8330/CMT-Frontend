@@ -15,7 +15,7 @@ export default class conferenceHome extends Component {
 
     //retrieving all research
     componentDidMount() {
-        axios.get('http://localhost:3001/conference/readAllConferences/')
+        axios.get('https://conference-tool-app.herokuapp.com/conference/readAllConferences/')
             .then(response => {
                 this.setState({ conferences: response.data.data });
             })

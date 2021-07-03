@@ -30,7 +30,7 @@ export default class AddConference extends Component {
             "conferenceDate": this.state.date,
             "conferenceTime": this.state.time
         }
-        Axios.post('http://localhost:3001/conference/insertConference', conference)
+        Axios.post('https://conference-tool-app.herokuapp.com/conference/insertConference', conference)
             .then(response => {
                 alert('Conference Details added Successfully');
             }).catch(error => {

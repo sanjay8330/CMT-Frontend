@@ -16,7 +16,7 @@ export default class ViewResearchPaper extends Component {
     }
     //retrieving all research
     componentDidMount() {
-        axios.get('http://localhost:3001/research/readAllApprovedResearch/')
+        axios.get('https://conference-tool-app.herokuapp.com/research/readAllApprovedResearch/')
             .then(response => {
                 this.setState({ approvedResearch: response.data });
             }).catch(error => {

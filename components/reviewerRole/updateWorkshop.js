@@ -20,7 +20,7 @@ class UpdateWorkshop extends Component {
     }
 
     componentDidMount(e) {
-        Axios.get(`http://localhost:3001/workshop/readById/${this.props.match.params.id}`)
+        Axios.get(`https://conference-tool-app.herokuapp.com/workshop/readById/${this.props.match.params.id}`)
             .then(response => {
                 this.setState({ workshop: response.data });
                 console.log('RESPONSE ', this.state.workshop.length);
@@ -35,7 +35,7 @@ class UpdateWorkshop extends Component {
             "approvalStatus": this.state.approvalStatus,
             "workshopAmount": this.state.workshopAmount
         }
-        Axios.put(`http://localhost:3001/workshop/approveOrDecline/${this.props.match.params.id}`, updWorkshop)
+        Axios.put(`https://conference-tool-app.herokuapp.com/workshop/approveOrDecline/${this.props.match.params.id}`, updWorkshop)
             .then(response => {
                 alert('Updated Successfully');
                 window.location = '/DisplayWorkshopReviewer';

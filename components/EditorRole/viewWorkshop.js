@@ -15,7 +15,7 @@ export default class ViewWorkshopEditor extends Component {
     }
     //retrieving all workshops
     componentDidMount() {
-        axios.get('http://localhost:3001/workshop/readAllApprovedUnreserved/')
+        axios.get('https://conference-tool-app.herokuapp.com/workshop/readAllApprovedUnreserved/')
             .then(response => {
                 this.setState({ approvedWorkshops: response.data });
             }).catch(error => {

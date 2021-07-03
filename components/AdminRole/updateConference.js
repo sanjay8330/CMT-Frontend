@@ -17,7 +17,7 @@ class UpdateConference extends Component {
     }
 
     componentDidMount(e) {
-        Axios.get(`http://localhost:3001/conference/readById/${this.props.match.params.id}`)
+        Axios.get(`https://conference-tool-app.herokuapp.com/conference/readById/${this.props.match.params.id}`)
             .then(response => {
                 this.setState({ conference: response.data });
                 console.log('RESPONSE ', this.state.conference.length);
@@ -31,7 +31,7 @@ class UpdateConference extends Component {
         let updConference = {
             "adminApprovalStatus": this.state.adminApprovalStatus
         }
-        Axios.put(`http://localhost:3001/conference/approveOrDecline/${this.props.match.params.id}`, updConference)
+        Axios.put(`https://conference-tool-app.herokuapp.com/approveOrDecline/${this.props.match.params.id}`, updConference)
             .then(response => {
                 alert('Updated Successfully');
             }).catch(error => {

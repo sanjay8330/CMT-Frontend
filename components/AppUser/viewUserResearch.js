@@ -14,7 +14,7 @@ export default class UserResearch extends Component {
 
     componentDidMount() {
         //retrieving all research papers by Email ID
-        Axios.get(`http://localhost:3001/research/readByEmail/${this.props.match.params.id}`)
+        Axios.get(`https://conference-tool-app.herokuapp.com/research/readByEmail/${this.props.match.params.id}`)
             .then(response => {
                 this.setState({ researches: response.data });
             }).catch(error => {

@@ -13,7 +13,7 @@ export default class UnApprovedResearch extends Component {
 
     //retrieving all research
     componentDidMount() {
-        axios.get('http://localhost:3001/research/readAllUnApprovedResearch/')
+        axios.get('https://conference-tool-app.herokuapp.com/research/readAllUnApprovedResearch/')
             .then(response => {
                 this.setState({ unapprovedResearch: response.data });
             }).catch(error => {

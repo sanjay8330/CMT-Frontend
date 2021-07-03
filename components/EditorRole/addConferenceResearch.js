@@ -25,7 +25,7 @@ export default class AddConferenceResearch extends Component {
 
     //Get all available conference names - but pass the ID
     componentDidMount(e) {
-        Axios.get('http://localhost:3001/conference/readAllConferences')
+        Axios.get('https://conference-tool-app.herokuapp.com/conference/readAllConferences')
             .then(response => {
                 this.setState({ conferenceList: response.data.data }, () => {
                     let data = [];
@@ -53,12 +53,12 @@ export default class AddConferenceResearch extends Component {
             "allocatedTime": this.state.allocatedTime,
             "adminApprovalStatus": this.state.adminApprovalStatus
         }
-        Axios.post('http://localhost:3001/conferenceResearchs/insertConferenceResearches', conferenceResearch)
+        Axios.post('https://conference-tool-app.herokuapp.com/conferenceResearchs/insertConferenceResearches', conferenceResearch)
         .then(response => {
             let updResearch = {
                 "eventStatus": this.state.eventStatus
             }
-            Axios.put(`http://localhost:3001/research/changeEventStatus/${this.props.match.params.id}`, updResearch)
+            Axios.put(`https://conference-tool-app.herokuapp.com/research/changeEventStatus/${this.props.match.params.id}`, updResearch)
             .then(response => {
                 alert('Research Added to conference & Updated');
                 window.location = "/viewEditorResearch";

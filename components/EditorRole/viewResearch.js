@@ -15,7 +15,7 @@ export default class ViewResearchEditor extends Component {
     }
     //retrieving all research
     componentDidMount() {
-        axios.get('http://localhost:3001/research/readAllApprovedUnreserved/')
+        axios.get('https://conference-tool-app.herokuapp.com/research/readAllApprovedUnreserved/')
             .then(response => {
                 this.setState({ approvedResearch: response.data });
             }).catch(error => {

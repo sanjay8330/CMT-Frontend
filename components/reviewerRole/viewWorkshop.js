@@ -17,7 +17,7 @@ export default class workshop extends Component {
 
     //retrieving all workshops
     componentDidMount() {
-        axios.get('http://localhost:3001/workshop/readAllWorkshops/')
+        axios.get('https://conference-tool-app.herokuapp.com/workshop/readAllWorkshops/')
             .then(response => {
                 this.setState({ workshops: response.data });
             })
@@ -35,7 +35,7 @@ export default class workshop extends Component {
 
     //delete() method
     delete(workshopId) {
-        axios.get('http://localhost:3001/workshop/deleteById/' + workshopId)
+        axios.get('https://conference-tool-app.herokuapp.com/workshop/deleteById/' + workshopId)
             .then(response => {
                 // alert("Are you sure you want to delete this Workshop Details?");
                 this.componentDidMount();

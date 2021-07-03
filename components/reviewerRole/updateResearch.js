@@ -20,7 +20,7 @@ class UpdateResearch extends Component {
 
     //retrieving summary of all workshops and research papers
     componentDidMount(e) {
-        Axios.get(`http://localhost:3001/research/readById/${this.props.match.params.id}`)
+        Axios.get(`https://conference-tool-app.herokuapp.com/research/readById/${this.props.match.params.id}`)
             .then(response => {
                 this.setState({ research: response.data });
                 console.log('RESPONSE ', this.state.research.length);
@@ -39,7 +39,7 @@ class UpdateResearch extends Component {
             "approvalStatus": this.state.approvalStatus,
             "researchAmount": this.state.researchAmount
         }
-        Axios.put(`http://localhost:3001/research/approveOrDecline/${this.props.match.params.id}`, updResearch)
+        Axios.put(`https://conference-tool-app.herokuapp.com/research/approveOrDecline/${this.props.match.params.id}`, updResearch)
             .then(response => {
                 alert('Updated Successfully');
                 window.location = '/DisplayResearchReviewer';

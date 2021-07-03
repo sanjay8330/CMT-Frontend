@@ -16,7 +16,7 @@ export default class ViewWorkshop extends Component {
     }
     //retrieving all workshops
     componentDidMount() {
-        axios.get('http://localhost:3001/workshop/readAllApprovedWorkshops/')
+        axios.get('https://conference-tool-app.herokuapp.com/workshop/readAllApprovedWorkshops/')
             .then(response => {
                 this.setState({ approvedWorkshops: response.data });
             }).catch(error => {

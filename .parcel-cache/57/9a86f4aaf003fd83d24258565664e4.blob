@@ -1,0 +1,461 @@
+var helpers = require("./node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+helpers.prelude(module);
+try {
+  var _parcelHelpers = require("@parcel/transformer-js/lib/esmodule-helpers.js");
+  _parcelHelpers.defineInteropFlag(exports);
+  var _react = require('react');
+  var _reactDefault = _parcelHelpers.interopDefault(_react);
+  var _reactRouterDom = require('react-router-dom');
+  var _componentsHeader_FooterFooter = require('./components/Header_Footer/Footer');
+  var _componentsHeader_FooterFooterDefault = _parcelHelpers.interopDefault(_componentsHeader_FooterFooter);
+  var _componentsHome = require('./components/Home');
+  var _componentsHomeDefault = _parcelHelpers.interopDefault(_componentsHome);
+  var _componentsWorkshopsCreateWorkshop = require('./components/Workshops/createWorkshop');
+  var _componentsWorkshopsCreateWorkshopDefault = _parcelHelpers.interopDefault(_componentsWorkshopsCreateWorkshop);
+  var _componentsAttendeesCreateAttendees = require('./components/Attendees/createAttendees');
+  var _componentsAttendeesCreateAttendeesDefault = _parcelHelpers.interopDefault(_componentsAttendeesCreateAttendees);
+  var _componentsAppUserCreateUser = require('./components/AppUser/createUser');
+  var _componentsAppUserCreateUserDefault = _parcelHelpers.interopDefault(_componentsAppUserCreateUser);
+  var _componentsAppUserCreateGeneralUser = require('./components/AppUser/createGeneralUser');
+  var _componentsAppUserCreateGeneralUserDefault = _parcelHelpers.interopDefault(_componentsAppUserCreateGeneralUser);
+  var _componentsAppUserSignUpHome = require('./components/AppUser/signUpHome');
+  var _componentsAppUserSignUpHomeDefault = _parcelHelpers.interopDefault(_componentsAppUserSignUpHome);
+  var _componentsAppUserCreateUserWorkshop = require('./components/AppUser/createUserWorkshop');
+  var _componentsAppUserCreateUserWorkshopDefault = _parcelHelpers.interopDefault(_componentsAppUserCreateUserWorkshop);
+  var _componentsAppUserCreateUserResearch = require('./components/AppUser/createUserResearch');
+  var _componentsAppUserCreateUserResearchDefault = _parcelHelpers.interopDefault(_componentsAppUserCreateUserResearch);
+  var _componentsLoginUserLogin = require('./components/Login/userLogin');
+  var _componentsLoginUserLoginDefault = _parcelHelpers.interopDefault(_componentsLoginUserLogin);
+  var _componentsAdminRoleViewWorkshops = require('./components/AdminRole/viewWorkshops');
+  var _componentsAdminRoleViewWorkshopsDefault = _parcelHelpers.interopDefault(_componentsAdminRoleViewWorkshops);
+  var _componentsAdminRoleViewResearch = require('./components/AdminRole/viewResearch');
+  var _componentsAdminRoleViewResearchDefault = _parcelHelpers.interopDefault(_componentsAdminRoleViewResearch);
+  var _componentsResearchCreateResearch = require('./components/Research/createResearch');
+  var _componentsResearchCreateResearchDefault = _parcelHelpers.interopDefault(_componentsResearchCreateResearch);
+  var _componentsLoggedHome = require('./components/loggedHome');
+  var _componentsLoggedHomeDefault = _parcelHelpers.interopDefault(_componentsLoggedHome);
+  var _componentsAdminRoleViewResearchNA = require('./components/AdminRole/viewResearchNA');
+  var _componentsAdminRoleViewResearchNADefault = _parcelHelpers.interopDefault(_componentsAdminRoleViewResearchNA);
+  var _componentsAdminRoleViewWorkshopNA = require('./components/AdminRole/viewWorkshopNA');
+  var _componentsAdminRoleViewWorkshopNADefault = _parcelHelpers.interopDefault(_componentsAdminRoleViewWorkshopNA);
+  var _componentsEditorRoleCreateConference = require('./components/EditorRole/createConference');
+  var _componentsEditorRoleCreateConferenceDefault = _parcelHelpers.interopDefault(_componentsEditorRoleCreateConference);
+  var _componentsEditorRoleViewConferences = require('./components/EditorRole/viewConferences');
+  var _componentsEditorRoleViewConferencesDefault = _parcelHelpers.interopDefault(_componentsEditorRoleViewConferences);
+  var _componentsEditorRoleViewResearch = require('./components/EditorRole/viewResearch');
+  var _componentsEditorRoleViewResearchDefault = _parcelHelpers.interopDefault(_componentsEditorRoleViewResearch);
+  var _componentsEditorRoleViewWorkshop = require('./components/EditorRole/viewWorkshop');
+  var _componentsEditorRoleViewWorkshopDefault = _parcelHelpers.interopDefault(_componentsEditorRoleViewWorkshop);
+  var _componentsEditorRoleAddConferenceResearch = require('./components/EditorRole/addConferenceResearch');
+  var _componentsEditorRoleAddConferenceResearchDefault = _parcelHelpers.interopDefault(_componentsEditorRoleAddConferenceResearch);
+  var _componentsAppUserViewUserResearch = require('./components/AppUser/viewUserResearch');
+  var _componentsAppUserViewUserResearchDefault = _parcelHelpers.interopDefault(_componentsAppUserViewUserResearch);
+  var _componentsAppUserViewUserWorkshop = require('./components/AppUser/viewUserWorkshop');
+  var _componentsAppUserViewUserWorkshopDefault = _parcelHelpers.interopDefault(_componentsAppUserViewUserWorkshop);
+  var _componentsAbout = require('./components/about');
+  var _componentsAboutDefault = _parcelHelpers.interopDefault(_componentsAbout);
+  var _componentsEditorRoleAddConferenceWorkshop = require('./components/EditorRole/addConferenceWorkshop');
+  var _componentsEditorRoleAddConferenceWorkshopDefault = _parcelHelpers.interopDefault(_componentsEditorRoleAddConferenceWorkshop);
+  var _componentsAdminRoleViewConference = require('./components/AdminRole/viewConference');
+  var _componentsAdminRoleViewConferenceDefault = _parcelHelpers.interopDefault(_componentsAdminRoleViewConference);
+  var _componentsAdminRoleUpdateConference = require('./components/AdminRole/updateConference');
+  var _componentsAdminRoleUpdateConferenceDefault = _parcelHelpers.interopDefault(_componentsAdminRoleUpdateConference);
+  var _componentsConferenceHome = require('./components/conferenceHome');
+  var _componentsConferenceHomeDefault = _parcelHelpers.interopDefault(_componentsConferenceHome);
+  var _componentsConferencesCheckConferenceEvents = require('./components/Conferences/checkConferenceEvents');
+  var _componentsConferencesCheckConferenceEventsDefault = _parcelHelpers.interopDefault(_componentsConferencesCheckConferenceEvents);
+  var _componentsDashboardAdminDashboard = require('./components/Dashboard/adminDashboard');
+  var _componentsDashboardAdminDashboardDefault = _parcelHelpers.interopDefault(_componentsDashboardAdminDashboard);
+  var _componentsDashboardReviewerDashboard = require('./components/Dashboard/reviewerDashboard');
+  var _componentsDashboardReviewerDashboardDefault = _parcelHelpers.interopDefault(_componentsDashboardReviewerDashboard);
+  var _componentsDashboardEditorDashboard = require('./components/Dashboard/editorDashboard');
+  var _componentsDashboardEditorDashboardDefault = _parcelHelpers.interopDefault(_componentsDashboardEditorDashboard);
+  var _componentsReviewerRoleViewWorkshop = require('./components/reviewerRole/viewWorkshop');
+  var _componentsReviewerRoleViewWorkshopDefault = _parcelHelpers.interopDefault(_componentsReviewerRoleViewWorkshop);
+  var _componentsReviewerRoleViewResearchpaper = require('./components/reviewerRole/viewResearchpaper');
+  var _componentsReviewerRoleViewResearchpaperDefault = _parcelHelpers.interopDefault(_componentsReviewerRoleViewResearchpaper);
+  var _componentsReviewerRoleUpdateWorkshop = require('./components/reviewerRole/updateWorkshop');
+  var _componentsReviewerRoleUpdateWorkshopDefault = _parcelHelpers.interopDefault(_componentsReviewerRoleUpdateWorkshop);
+  var _componentsReviewerRoleUpdateResearch = require('./components/reviewerRole/updateResearch');
+  var _componentsReviewerRoleUpdateResearchDefault = _parcelHelpers.interopDefault(_componentsReviewerRoleUpdateResearch);
+  var _componentsReviewerRoleSummary = require('./components/reviewerRole/summary');
+  var _componentsReviewerRoleSummaryDefault = _parcelHelpers.interopDefault(_componentsReviewerRoleSummary);
+  var _jsxFileName = "C:\\Users\\HP\\Desktop\\Assignments\\CMT-Frontend\\App.jsx";
+  class App extends _reactDefault.default.Component {
+    constructor(props) {
+      super(props);
+    }
+    render() {
+      return (
+        /*#__PURE__*/_reactDefault.default.createElement("div", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 56,
+            columnNumber: 13
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement(_reactRouterDom.BrowserRouter, {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 57,
+            columnNumber: 17
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement("section", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 58,
+            columnNumber: 21
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement(_reactRouterDom.Switch, {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 59,
+            columnNumber: 25
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement(_reactRouterDom.Route, {
+          path: "/",
+          component: _componentsHomeDefault.default,
+          exact: true,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 60,
+            columnNumber: 29
+          }
+        }), /*#__PURE__*/_reactDefault.default.createElement(_reactRouterDom.Route, {
+          path: "/addWorkshop",
+          component: _componentsWorkshopsCreateWorkshopDefault.default,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 61,
+            columnNumber: 29
+          }
+        }), /*#__PURE__*/_reactDefault.default.createElement(_reactRouterDom.Route, {
+          path: "/addAttendee",
+          component: _componentsAttendeesCreateAttendeesDefault.default,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 62,
+            columnNumber: 29
+          }
+        }), /*#__PURE__*/_reactDefault.default.createElement(_reactRouterDom.Route, {
+          path: "/generalUserSignUp",
+          component: _componentsAppUserCreateGeneralUserDefault.default,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 63,
+            columnNumber: 29
+          }
+        }), /*#__PURE__*/_reactDefault.default.createElement(_reactRouterDom.Route, {
+          path: "/login",
+          component: _componentsLoginUserLoginDefault.default,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 64,
+            columnNumber: 29
+          }
+        }), /*#__PURE__*/_reactDefault.default.createElement(_reactRouterDom.Route, {
+          path: "/addUser",
+          component: _componentsAppUserCreateUserDefault.default,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 65,
+            columnNumber: 29
+          }
+        }), /*#__PURE__*/_reactDefault.default.createElement(_reactRouterDom.Route, {
+          path: "/signUpHome",
+          component: _componentsAppUserSignUpHomeDefault.default,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 66,
+            columnNumber: 29
+          }
+        }), /*#__PURE__*/_reactDefault.default.createElement(_reactRouterDom.Route, {
+          path: "/addUserWorkshop",
+          component: _componentsAppUserCreateUserWorkshopDefault.default,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 67,
+            columnNumber: 29
+          }
+        }), /*#__PURE__*/_reactDefault.default.createElement(_reactRouterDom.Route, {
+          path: "/addUserResearch",
+          component: _componentsAppUserCreateUserResearchDefault.default,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 68,
+            columnNumber: 29
+          }
+        }), /*#__PURE__*/_reactDefault.default.createElement(_reactRouterDom.Route, {
+          path: "/adminWorkshops",
+          component: _componentsAdminRoleViewWorkshopsDefault.default,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 69,
+            columnNumber: 29
+          }
+        }), /*#__PURE__*/_reactDefault.default.createElement(_reactRouterDom.Route, {
+          path: "/adminResearches",
+          component: _componentsAdminRoleViewResearchDefault.default,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 70,
+            columnNumber: 29
+          }
+        }), /*#__PURE__*/_reactDefault.default.createElement(_reactRouterDom.Route, {
+          path: "/addResearch",
+          component: _componentsResearchCreateResearchDefault.default,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 71,
+            columnNumber: 29
+          }
+        }), /*#__PURE__*/_reactDefault.default.createElement(_reactRouterDom.Route, {
+          path: "/loggedHome/:id",
+          component: _componentsLoggedHomeDefault.default,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 72,
+            columnNumber: 29
+          }
+        }), /*#__PURE__*/_reactDefault.default.createElement(_reactRouterDom.Route, {
+          path: "/getNAResearch",
+          component: _componentsAdminRoleViewResearchNADefault.default,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 73,
+            columnNumber: 29
+          }
+        }), /*#__PURE__*/_reactDefault.default.createElement(_reactRouterDom.Route, {
+          path: "/getNAWorkshop",
+          component: _componentsAdminRoleViewWorkshopNADefault.default,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 74,
+            columnNumber: 29
+          }
+        }), /*#__PURE__*/_reactDefault.default.createElement(_reactRouterDom.Route, {
+          path: "/addConference",
+          component: _componentsEditorRoleCreateConferenceDefault.default,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 75,
+            columnNumber: 29
+          }
+        }), /*#__PURE__*/_reactDefault.default.createElement(_reactRouterDom.Route, {
+          path: "/viewConference",
+          component: _componentsEditorRoleViewConferencesDefault.default,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 76,
+            columnNumber: 29
+          }
+        }), /*#__PURE__*/_reactDefault.default.createElement(_reactRouterDom.Route, {
+          path: "/viewEditorResearch",
+          component: _componentsEditorRoleViewResearchDefault.default,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 77,
+            columnNumber: 29
+          }
+        }), /*#__PURE__*/_reactDefault.default.createElement(_reactRouterDom.Route, {
+          path: "/viewEditorWorkshop",
+          component: _componentsEditorRoleViewWorkshopDefault.default,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 78,
+            columnNumber: 29
+          }
+        }), /*#__PURE__*/_reactDefault.default.createElement(_reactRouterDom.Route, {
+          path: "/conferenceResearch/:id",
+          component: _componentsEditorRoleAddConferenceResearchDefault.default,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 79,
+            columnNumber: 29
+          }
+        }), /*#__PURE__*/_reactDefault.default.createElement(_reactRouterDom.Route, {
+          path: "/viewUserResearch/:id",
+          component: _componentsAppUserViewUserResearchDefault.default,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 80,
+            columnNumber: 29
+          }
+        }), /*#__PURE__*/_reactDefault.default.createElement(_reactRouterDom.Route, {
+          path: "/viewUserWorkshop/:id",
+          component: _componentsAppUserViewUserWorkshopDefault.default,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 81,
+            columnNumber: 29
+          }
+        }), /*#__PURE__*/_reactDefault.default.createElement(_reactRouterDom.Route, {
+          path: "/about",
+          component: _componentsAboutDefault.default,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 82,
+            columnNumber: 29
+          }
+        }), /*#__PURE__*/_reactDefault.default.createElement(_reactRouterDom.Route, {
+          path: "/conferenceWorkshop/:id",
+          component: _componentsEditorRoleAddConferenceWorkshopDefault.default,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 83,
+            columnNumber: 29
+          }
+        }), /*#__PURE__*/_reactDefault.default.createElement(_reactRouterDom.Route, {
+          path: "/adminViewConference",
+          component: _componentsAdminRoleViewConferenceDefault.default,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 84,
+            columnNumber: 29
+          }
+        }), /*#__PURE__*/_reactDefault.default.createElement(_reactRouterDom.Route, {
+          path: "/UpdateConferenceAdmin/:id",
+          component: _componentsAdminRoleUpdateConferenceDefault.default,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 85,
+            columnNumber: 29
+          }
+        }), /*#__PURE__*/_reactDefault.default.createElement(_reactRouterDom.Route, {
+          path: "/conferenceHome",
+          component: _componentsConferenceHomeDefault.default,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 86,
+            columnNumber: 29
+          }
+        }), /*#__PURE__*/_reactDefault.default.createElement(_reactRouterDom.Route, {
+          path: "/checkEvents",
+          component: _componentsConferencesCheckConferenceEventsDefault.default,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 87,
+            columnNumber: 29
+          }
+        }), /*#__PURE__*/_reactDefault.default.createElement(_reactRouterDom.Route, {
+          path: "/adminDashboard",
+          component: _componentsDashboardAdminDashboardDefault.default,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 89,
+            columnNumber: 29
+          }
+        }), /*#__PURE__*/_reactDefault.default.createElement(_reactRouterDom.Route, {
+          path: "/reviewerDashboard",
+          component: _componentsDashboardReviewerDashboardDefault.default,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 90,
+            columnNumber: 29
+          }
+        }), /*#__PURE__*/_reactDefault.default.createElement(_reactRouterDom.Route, {
+          path: "/editorDashboard",
+          component: _componentsDashboardEditorDashboardDefault.default,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 91,
+            columnNumber: 29
+          }
+        }), /*#__PURE__*/_reactDefault.default.createElement(_reactRouterDom.Route, {
+          path: "/DisplayWorkshopReviewer",
+          component: _componentsReviewerRoleViewWorkshopDefault.default,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 93,
+            columnNumber: 29
+          }
+        }), /*#__PURE__*/_reactDefault.default.createElement(_reactRouterDom.Route, {
+          path: "/DisplayResearchReviewer",
+          component: _componentsReviewerRoleViewResearchpaperDefault.default,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 94,
+            columnNumber: 29
+          }
+        }), /*#__PURE__*/_reactDefault.default.createElement(_reactRouterDom.Route, {
+          path: "/UpdateWorkshopReviewer/:id",
+          component: _componentsReviewerRoleUpdateWorkshopDefault.default,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 95,
+            columnNumber: 29
+          }
+        }), /*#__PURE__*/_reactDefault.default.createElement(_reactRouterDom.Route, {
+          path: "/UpdateResearchReviewer/:id",
+          component: _componentsReviewerRoleUpdateResearchDefault.default,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 96,
+            columnNumber: 29
+          }
+        }), /*#__PURE__*/_reactDefault.default.createElement(_reactRouterDom.Route, {
+          path: "/summary",
+          component: _componentsReviewerRoleSummaryDefault.default,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 97,
+            columnNumber: 29
+          }
+        }))), /*#__PURE__*/_reactDefault.default.createElement(_componentsHeader_FooterFooterDefault.default, {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 100,
+            columnNumber: 21
+          }
+        })))
+      );
+    }
+  }
+  exports.default = App;
+  helpers.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}

@@ -1,0 +1,319 @@
+var helpers = require("../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+helpers.prelude(module);
+try {
+  var _parcelHelpers = require("@parcel/transformer-js/lib/esmodule-helpers.js");
+  _parcelHelpers.defineInteropFlag(exports);
+  var _react = require('react');
+  var _reactDefault = _parcelHelpers.interopDefault(_react);
+  var _axios = require('axios');
+  var _axiosDefault = _parcelHelpers.interopDefault(_axios);
+  var _Header_FooterReviewerHeader = require('../Header_Footer/reviewerHeader');
+  var _Header_FooterReviewerHeaderDefault = _parcelHelpers.interopDefault(_Header_FooterReviewerHeader);
+  require('../../css/App.css');
+  var _jsxFileName = "C:\\Users\\HP\\Desktop\\Assignments\\CMT-Frontend\\components\\reviewerRole\\updateResearch.js";
+  const initialStates = {
+    "research": [],
+    "approvalStatus": 'Approved',
+    "researchAmount": ''
+  };
+  class UpdateResearch extends _react.Component {
+    // initializing the states
+    constructor(props) {
+      super(props);
+      this.onChange = this.onChange.bind(this);
+      this.onSubmit = this.onSubmit.bind(this);
+      this.state = initialStates;
+    }
+    /*retrieving summary of all workshops and research papers*/
+    componentDidMount(e) {
+      _axiosDefault.default.get(`http://localhost:3001/research/readById/${this.props.match.params.id}`).then(response => {
+        this.setState({
+          research: response.data
+        });
+        console.log('RESPONSE ', this.state.research.length);
+      }).catch(error => {
+        alert('Error ', error.message);
+      });
+    }
+    onChange(e) {
+      this.setState({
+        [e.target.name]: e.target.value
+      });
+    }
+    onSubmit(e) {
+      e.preventDefault();
+      let updResearch = {
+        "approvalStatus": this.state.approvalStatus,
+        "researchAmount": this.state.researchAmount
+      };
+      _axiosDefault.default.put(`http://localhost:3001/research/approveOrDecline/${this.props.match.params.id}`, updResearch).then(response => {
+        alert('Updated Successfully');
+        window.location = '/DisplayResearchReviewer';
+      }).catch(error => {
+        alert(error.message);
+      });
+    }
+    render() {
+      return (
+        /*#__PURE__*/_reactDefault.default.createElement("div", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 54,
+            columnNumber: 13
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement(_Header_FooterReviewerHeaderDefault.default, {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 55,
+            columnNumber: 17
+          }
+        }), /*#__PURE__*/_reactDefault.default.createElement("br", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 55,
+            columnNumber: 27
+          }
+        }), /*#__PURE__*/_reactDefault.default.createElement("br", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 55,
+            columnNumber: 33
+          }
+        }), /*#__PURE__*/_reactDefault.default.createElement("br", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 55,
+            columnNumber: 39
+          }
+        }), /*#__PURE__*/_reactDefault.default.createElement("br", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 55,
+            columnNumber: 45
+          }
+        }), /*#__PURE__*/_reactDefault.default.createElement("br", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 56,
+            columnNumber: 21
+          }
+        }), /*#__PURE__*/_reactDefault.default.createElement("div", {
+          className: "add5",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 57,
+            columnNumber: 21
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement("div", {
+          className: "card1",
+          style: {
+            backgroundColor: "#919b9e"
+          },
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 58,
+            columnNumber: 25
+          }
+        }, this.state.research.length > 0 && this.state.research.map((item, index) => /*#__PURE__*/_reactDefault.default.createElement("div", {
+          key: index,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 60,
+            columnNumber: 33
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement("div", {
+          className: "p-3",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 61,
+            columnNumber: 37
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement("h6", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 62,
+            columnNumber: 41
+          }
+        }, "Research Paper Title        : ", item.researchTitle), /*#__PURE__*/_reactDefault.default.createElement("h6", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 63,
+            columnNumber: 41
+          }
+        }, "Research Paper Author Email : ", item.authorEmail), /*#__PURE__*/_reactDefault.default.createElement("h6", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 64,
+            columnNumber: 41
+          }
+        }, "Research Paper : ", /*#__PURE__*/_reactDefault.default.createElement("a", {
+          href: item.downloadURL,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 64,
+            columnNumber: 62
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement("button", {
+          class: "downloadBtn",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 64,
+            columnNumber: 89
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement("i", {
+          class: "fa fa-download",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 64,
+            columnNumber: 117
+          }
+        }), " Download"))))))), /*#__PURE__*/_reactDefault.default.createElement("br", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 68,
+            columnNumber: 31
+          }
+        }), /*#__PURE__*/_reactDefault.default.createElement("center", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 69,
+            columnNumber: 25
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement("h2", {
+          class: "log",
+          style: {
+            color: "white"
+          },
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 69,
+            columnNumber: 33
+          }
+        }, "Update Research Paper Details")), /*#__PURE__*/_reactDefault.default.createElement("br", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 69,
+            columnNumber: 119
+          }
+        }), /*#__PURE__*/_reactDefault.default.createElement("form", {
+          onSubmit: this.onSubmit,
+          style: {
+            height: "100px;"
+          },
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 70,
+            columnNumber: 25
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement("span", {
+          style: {
+            color: "white"
+          },
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 72,
+            columnNumber: 29
+          }
+        }, "Research Amount (Rs)"), /*#__PURE__*/_reactDefault.default.createElement("input", {
+          type: "number",
+          className: "form-control",
+          id: "researchAmount",
+          name: "researchAmount",
+          value: this.state.researchAmount,
+          onChange: this.onChange,
+          required: true,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 73,
+            columnNumber: 29
+          }
+        }), /*#__PURE__*/_reactDefault.default.createElement("br", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 81,
+            columnNumber: 31
+          }
+        }), /*#__PURE__*/_reactDefault.default.createElement("span", {
+          style: {
+            color: "white"
+          },
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 83,
+            columnNumber: 29
+          }
+        }, "Approval Status"), /*#__PURE__*/_reactDefault.default.createElement("input", {
+          type: "text",
+          className: "form-control",
+          id: "approvalStatus",
+          name: "approvalStatus",
+          value: this.state.approvalStatus,
+          required: true,
+          readOnly: true,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 84,
+            columnNumber: 29
+          }
+        }), /*#__PURE__*/_reactDefault.default.createElement("br", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 92,
+            columnNumber: 31
+          }
+        }), /*#__PURE__*/_reactDefault.default.createElement("button", {
+          type: "submit",
+          className: "btn btn-primary",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 94,
+            columnNumber: 29
+          }
+        }, "Submit"))), /*#__PURE__*/_reactDefault.default.createElement("br", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 96,
+            columnNumber: 27
+          }
+        }))
+      );
+    }
+  }
+  exports.default = UpdateResearch;
+  helpers.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}

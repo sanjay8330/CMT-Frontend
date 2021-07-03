@@ -1,0 +1,318 @@
+var helpers = require("../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+helpers.prelude(module);
+try {
+  var _parcelHelpers = require("@parcel/transformer-js/lib/esmodule-helpers.js");
+  _parcelHelpers.defineInteropFlag(exports);
+  var _react = require("react");
+  var _reactDefault = _parcelHelpers.interopDefault(_react);
+  require('../../css/style.css');
+  var _mdbreact = require("mdbreact");
+  var _jsxFileName = "C:\\Users\\HP\\Desktop\\Assignments\\CMT-Frontend\\components\\Header_Footer\\Footer.js";
+  const FooterPagePro = () => {
+    return (
+      /*#__PURE__*/_reactDefault.default.createElement("div", {
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 7,
+          columnNumber: 5
+        }
+      }, /*#__PURE__*/_reactDefault.default.createElement("footer", {
+        id: "footer",
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 8,
+          columnNumber: 7
+        }
+      }, /*#__PURE__*/_reactDefault.default.createElement("div", {
+        class: "footer-top",
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 9,
+          columnNumber: 9
+        }
+      }, /*#__PURE__*/_reactDefault.default.createElement("div", {
+        class: "container",
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 10,
+          columnNumber: 11
+        }
+      }, /*#__PURE__*/_reactDefault.default.createElement("div", {
+        class: "row",
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 11,
+          columnNumber: 13
+        }
+      }), /*#__PURE__*/_reactDefault.default.createElement("div", {
+        class: "col-lg-3 col-md-6 footer-info",
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 12,
+          columnNumber: 13
+        }
+      }, /*#__PURE__*/_reactDefault.default.createElement("div", {
+        id: "logo",
+        class: "me-auto",
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 13,
+          columnNumber: 15
+        }
+      }, /*#__PURE__*/_reactDefault.default.createElement("h3", {
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 14,
+          columnNumber: 17
+        }
+      }, /*#__PURE__*/_reactDefault.default.createElement("a", {
+        href: "index.html",
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 14,
+          columnNumber: 21
+        }
+      }, "CMT-", /*#__PURE__*/_reactDefault.default.createElement("span", {
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 14,
+          columnNumber: 46
+        }
+      }, "2021")))), /*#__PURE__*/_reactDefault.default.createElement("p", {
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 16,
+          columnNumber: 15
+        }
+      }, "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry. ")), /*#__PURE__*/_reactDefault.default.createElement(_mdbreact.MDBCol, {
+        md: "3",
+        lg: "3",
+        xl: "3",
+        className: "mx-auto mt-3",
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 20,
+          columnNumber: 13
+        }
+      }, /*#__PURE__*/_reactDefault.default.createElement("div", {
+        class: "col-lg-12 col-md-6 footer-links",
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 21,
+          columnNumber: 15
+        }
+      }, /*#__PURE__*/_reactDefault.default.createElement("h4", {
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 22,
+          columnNumber: 17
+        }
+      }, "Useful Links"), /*#__PURE__*/_reactDefault.default.createElement("ul", {
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 23,
+          columnNumber: 17
+        }
+      }, /*#__PURE__*/_reactDefault.default.createElement("li", {
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 24,
+          columnNumber: 19
+        }
+      }, /*#__PURE__*/_reactDefault.default.createElement("i", {
+        class: "bi bi-chevron-right",
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 24,
+          columnNumber: 23
+        }
+      }), " ", /*#__PURE__*/_reactDefault.default.createElement("a", {
+        href: "/",
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 24,
+          columnNumber: 59
+        }
+      }, "Home")), /*#__PURE__*/_reactDefault.default.createElement("li", {
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 25,
+          columnNumber: 19
+        }
+      }, /*#__PURE__*/_reactDefault.default.createElement("i", {
+        class: "bi bi-chevron-right",
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 25,
+          columnNumber: 23
+        }
+      }), " ", /*#__PURE__*/_reactDefault.default.createElement("a", {
+        href: "#",
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 25,
+          columnNumber: 59
+        }
+      }, "Conferenece")), /*#__PURE__*/_reactDefault.default.createElement("br", {
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 26,
+          columnNumber: 19
+        }
+      })))), /*#__PURE__*/_reactDefault.default.createElement(_mdbreact.MDBCol, {
+        md: "3",
+        lg: "3",
+        xl: "3",
+        className: "mx-auto mt-3",
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 32,
+          columnNumber: 13
+        }
+      }, /*#__PURE__*/_reactDefault.default.createElement("div", {
+        class: "col-lg-12 col-md-6 footer-contact",
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 33,
+          columnNumber: 15
+        }
+      }, /*#__PURE__*/_reactDefault.default.createElement("h4", {
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 34,
+          columnNumber: 17
+        }
+      }, "Contact Us"), /*#__PURE__*/_reactDefault.default.createElement("p", {
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 35,
+          columnNumber: 17
+        }
+      }, "111/7 ", /*#__PURE__*/_reactDefault.default.createElement("br", {
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 36,
+          columnNumber: 25
+        }
+      }), "Malabe Rd", /*#__PURE__*/_reactDefault.default.createElement("br", {
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 37,
+          columnNumber: 28
+        }
+      }), "Colombo 5 ", /*#__PURE__*/_reactDefault.default.createElement("br", {
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 38,
+          columnNumber: 29
+        }
+      }), /*#__PURE__*/_reactDefault.default.createElement("strong", {
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 39,
+          columnNumber: 19
+        }
+      }, "Phone:"), " 011 456 9994", /*#__PURE__*/_reactDefault.default.createElement("br", {
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 39,
+          columnNumber: 55
+        }
+      }), /*#__PURE__*/_reactDefault.default.createElement("strong", {
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 40,
+          columnNumber: 19
+        }
+      }, "Email:"), " CMT@gmail.com", /*#__PURE__*/_reactDefault.default.createElement("br", {
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 40,
+          columnNumber: 56
+        }
+      })))))), /*#__PURE__*/_reactDefault.default.createElement("div", {
+        class: "container",
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 48,
+          columnNumber: 9
+        }
+      }, /*#__PURE__*/_reactDefault.default.createElement("div", {
+        class: "copyright",
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 49,
+          columnNumber: 11
+        }
+      }, "© Copyright ", /*#__PURE__*/_reactDefault.default.createElement("strong", {
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 50,
+          columnNumber: 30
+        }
+      }, "CMT - 2021"), ". All Rights Reserved"), /*#__PURE__*/_reactDefault.default.createElement("div", {
+        class: "credits",
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 52,
+          columnNumber: 11
+        }
+      }, "Designed by: ", /*#__PURE__*/_reactDefault.default.createElement("a", {
+        href: "/",
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 53,
+          columnNumber: 26
+        }
+      }, "Group - 2021S1_REG_WE_28")))))
+    );
+  };
+  _c = FooterPagePro;
+  exports.default = FooterPagePro;
+  var _c;
+  $RefreshReg$(_c, "FooterPagePro");
+  helpers.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}

@@ -1,0 +1,271 @@
+var helpers = require("../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+helpers.prelude(module);
+try {
+  var _parcelHelpers = require("@parcel/transformer-js/lib/esmodule-helpers.js");
+  _parcelHelpers.defineInteropFlag(exports);
+  var _react = require('react');
+  var _reactDefault = _parcelHelpers.interopDefault(_react);
+  var _componentsHeader_FooterHeader = require('../components/Header_Footer/header');
+  var _componentsHeader_FooterHeaderDefault = _parcelHelpers.interopDefault(_componentsHeader_FooterHeader);
+  require('../css/App.css');
+  var _axios = require('axios');
+  var _axiosDefault = _parcelHelpers.interopDefault(_axios);
+  var _jsxFileName = "C:\\Users\\HP\\Desktop\\Assignments\\CMT-Frontend\\components\\conferenceHome.js";
+  class conferenceHome extends _react.Component {
+    // initializing the states
+    constructor(props) {
+      super(props);
+      this.state = {
+        conferences: []
+      };
+    }
+    /*retrieving all research*/
+    componentDidMount() {
+      _axiosDefault.default.get('http://localhost:3001/conference/readAllConferences/').then(response => {
+        this.setState({
+          conferences: response.data.data
+        });
+      });
+    }
+    render() {
+      return (
+        /*#__PURE__*/_reactDefault.default.createElement("div", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 26,
+            columnNumber: 13
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement(_componentsHeader_FooterHeaderDefault.default, {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 27,
+            columnNumber: 17
+          }
+        }), /*#__PURE__*/_reactDefault.default.createElement("br", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 27,
+            columnNumber: 27
+          }
+        }), /*#__PURE__*/_reactDefault.default.createElement("br", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 27,
+            columnNumber: 33
+          }
+        }), /*#__PURE__*/_reactDefault.default.createElement("br", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 27,
+            columnNumber: 39
+          }
+        }), /*#__PURE__*/_reactDefault.default.createElement("br", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 27,
+            columnNumber: 45
+          }
+        }), /*#__PURE__*/_reactDefault.default.createElement("div", {
+          class: "alert",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 29,
+            columnNumber: 17
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement("h1", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 30,
+            columnNumber: 20
+          }
+        }, "You can find conference details in here....")), /*#__PURE__*/_reactDefault.default.createElement("br", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 31,
+            columnNumber: 23
+          }
+        }), /*#__PURE__*/_reactDefault.default.createElement("br", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 31,
+            columnNumber: 29
+          }
+        }), /*#__PURE__*/_reactDefault.default.createElement("center", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 33,
+            columnNumber: 17
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement("div", {
+          class: "flip-card",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 34,
+            columnNumber: 21
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement("div", {
+          class: "flip-card-inner",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 35,
+            columnNumber: 25
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement("div", {
+          class: "flip-card-front",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 36,
+            columnNumber: 29
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement("br", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 36,
+            columnNumber: 58
+          }
+        }), /*#__PURE__*/_reactDefault.default.createElement("br", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 36,
+            columnNumber: 64
+          }
+        }), /*#__PURE__*/_reactDefault.default.createElement("h1", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 37,
+            columnNumber: 33
+          }
+        }, "CONFERENCE DETAILS")), /*#__PURE__*/_reactDefault.default.createElement("div", {
+          class: "flip-card-back",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 39,
+            columnNumber: 29
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement("table", {
+          class: "table border shadow",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 40,
+            columnNumber: 33
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement("thead", {
+          class: "thead-dark",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 41,
+            columnNumber: 37
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement("tr", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 42,
+            columnNumber: 41
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement("th", {
+          scope: "col",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 43,
+            columnNumber: 45
+          }
+        }, "TITLE"), /*#__PURE__*/_reactDefault.default.createElement("th", {
+          scope: "col",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 44,
+            columnNumber: 45
+          }
+        }, "CONFERENECE BRIEFINGS"), /*#__PURE__*/_reactDefault.default.createElement("th", {
+          scope: "col",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 45,
+            columnNumber: 45
+          }
+        }, "DATE"), /*#__PURE__*/_reactDefault.default.createElement("th", {
+          scope: "col",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 46,
+            columnNumber: 45
+          }
+        }, "TIME"))), /*#__PURE__*/_reactDefault.default.createElement("tbody", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 49,
+            columnNumber: 37
+          }
+        }, this.state.conferences.length > 0 && this.state.conferences.map((item, index) => /*#__PURE__*/_reactDefault.default.createElement("tr", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 51,
+            columnNumber: 45
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement("td", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 52,
+            columnNumber: 49
+          }
+        }, item.conferenceTitle), /*#__PURE__*/_reactDefault.default.createElement("td", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 53,
+            columnNumber: 49
+          }
+        }, item.conferenceBriefing), /*#__PURE__*/_reactDefault.default.createElement("td", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 54,
+            columnNumber: 49
+          }
+        }, item.conferenceDate), /*#__PURE__*/_reactDefault.default.createElement("td", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 55,
+            columnNumber: 49
+          }
+        }, item.conferenceTime))))))))))
+      );
+    }
+  }
+  exports.default = conferenceHome;
+  helpers.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}

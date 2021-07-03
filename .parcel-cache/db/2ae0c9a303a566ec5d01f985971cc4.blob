@@ -1,0 +1,178 @@
+var helpers = require("../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+helpers.prelude(module);
+try {
+  var _parcelHelpers = require("@parcel/transformer-js/lib/esmodule-helpers.js");
+  _parcelHelpers.defineInteropFlag(exports);
+  var _react = require('react');
+  var _reactDefault = _parcelHelpers.interopDefault(_react);
+  require('../../css/style.css');
+  var _jsxFileName = "C:\\Users\\HP\\Desktop\\Assignments\\CMT-Frontend\\components\\Header_Footer\\loggedHeader.js";
+  class loggedHeader extends _react.Component {
+    constructor(props) {
+      super(props);
+    }
+    render() {
+      return (
+        /*#__PURE__*/_reactDefault.default.createElement("div", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 11,
+            columnNumber: 7
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement("header", {
+          id: "header",
+          class: "d-flex align-items-center ",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 12,
+            columnNumber: 9
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement("div", {
+          class: "container-fluid container-xxl d-flex align-items-center",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 13,
+            columnNumber: 11
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement("div", {
+          id: "logo",
+          class: "me-auto",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 15,
+            columnNumber: 13
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement("h1", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 16,
+            columnNumber: 15
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement("a", {
+          href: "index.html",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 16,
+            columnNumber: 19
+          }
+        }, "CMT-", /*#__PURE__*/_reactDefault.default.createElement("span", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 16,
+            columnNumber: 44
+          }
+        }, "2021")))), /*#__PURE__*/_reactDefault.default.createElement("nav", {
+          id: "navbar",
+          class: "navbar order-last order-lg-0",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 19,
+            columnNumber: 15
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement("ul", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 20,
+            columnNumber: 17
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement("li", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 21,
+            columnNumber: 19
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement("a", {
+          class: "nav-link scrollto active",
+          href: "/loggedHome",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 21,
+            columnNumber: 23
+          }
+        }, "Home")), /*#__PURE__*/_reactDefault.default.createElement("li", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 22,
+            columnNumber: 19
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement("a", {
+          class: "nav-link scrollto",
+          href: "/addWorkshop",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 22,
+            columnNumber: 23
+          }
+        }, "Workshops")), /*#__PURE__*/_reactDefault.default.createElement("li", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 23,
+            columnNumber: 19
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement("a", {
+          class: "nav-link scrollto",
+          href: "/addAttendee",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 23,
+            columnNumber: 23
+          }
+        }, "Attendees")), /*#__PURE__*/_reactDefault.default.createElement("li", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 24,
+            columnNumber: 19
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement("a", {
+          class: "nav-link scrollto",
+          href: "/addResearch",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 24,
+            columnNumber: 23
+          }
+        }, "ResearchPapers")), /*#__PURE__*/_reactDefault.default.createElement("li", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 25,
+            columnNumber: 19
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement("a", {
+          class: "nav-link scrollto",
+          href: "/",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 25,
+            columnNumber: 23
+          }
+        }, "Logout")))))))
+      );
+    }
+  }
+  exports.default = loggedHeader;
+  helpers.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}

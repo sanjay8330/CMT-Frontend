@@ -1,0 +1,353 @@
+var helpers = require("../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+helpers.prelude(module);
+try {
+  var _parcelHelpers = require("@parcel/transformer-js/lib/esmodule-helpers.js");
+  _parcelHelpers.defineInteropFlag(exports);
+  var _react = require('react');
+  var _reactDefault = _parcelHelpers.interopDefault(_react);
+  var _componentsHeader_FooterLoggedHeader = require('../../components/Header_Footer/loggedHeader');
+  var _componentsHeader_FooterLoggedHeaderDefault = _parcelHelpers.interopDefault(_componentsHeader_FooterLoggedHeader);
+  var _axios = require('axios');
+  var _axiosDefault = _parcelHelpers.interopDefault(_axios);
+  var _jsxFileName = "C:\\Users\\HP\\Desktop\\Assignments\\CMT-Frontend\\components\\Attendees\\createAttendees.js";
+  const initialState = {
+    "name": '',
+    "email": '',
+    "phone": '',
+    "events": [],
+    "payDate": '',
+    "payAmount": '',
+    "accountNo": ''
+  };
+  class AddAttendees extends _react.Component {
+    constructor(props) {
+      super(props);
+      this.onChange = this.onChange.bind(this);
+      this.onSubmit = this.onSubmit.bind(this);
+      this.state = initialState;
+    }
+    onChange(e) {
+      this.setState({
+        [e.target.name]: e.target.value
+      });
+    }
+    onSubmit(e) {
+      e.preventDefault();
+      let attendee = {
+        "attendeeName": this.state.name,
+        "attendeeEmail": this.state.email,
+        "attendeeContact": this.state.phone,
+        "paymentDate": this.state.payDate,
+        "paymentAmount": this.state.payAmount,
+        "paymentAccountNo": this.state.accountNo
+      };
+      _axiosDefault.default.post('http://localhost:3001/attendee/insertAttendee', attendee).then(response => {
+        alert('Data added Successfully!');
+      }).catch(error => {
+        alert('Error ', error.message);
+      });
+    }
+    render() {
+      return (
+        /*#__PURE__*/_reactDefault.default.createElement("div", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 48,
+            columnNumber: 13
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement(_componentsHeader_FooterLoggedHeaderDefault.default, {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 49,
+            columnNumber: 17
+          }
+        }), /*#__PURE__*/_reactDefault.default.createElement("br", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 49,
+            columnNumber: 27
+          }
+        }), /*#__PURE__*/_reactDefault.default.createElement("br", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 49,
+            columnNumber: 33
+          }
+        }), /*#__PURE__*/_reactDefault.default.createElement("br", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 49,
+            columnNumber: 39
+          }
+        }), /*#__PURE__*/_reactDefault.default.createElement("br", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 49,
+            columnNumber: 45
+          }
+        }), /*#__PURE__*/_reactDefault.default.createElement("br", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 49,
+            columnNumber: 51
+          }
+        }), /*#__PURE__*/_reactDefault.default.createElement("div", {
+          className: "add2",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 50,
+            columnNumber: 17
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement("center", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 51,
+            columnNumber: 21
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement("h2", {
+          class: "log",
+          style: {
+            color: "white"
+          },
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 51,
+            columnNumber: 29
+          }
+        }, "Add Attendee Details")), /*#__PURE__*/_reactDefault.default.createElement("br", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 51,
+            columnNumber: 106
+          }
+        }), /*#__PURE__*/_reactDefault.default.createElement("form", {
+          onSubmit: this.onSubmit,
+          style: {
+            height: "100px;"
+          },
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 52,
+            columnNumber: 21
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement("span", {
+          style: {
+            color: "white"
+          },
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 54,
+            columnNumber: 25
+          }
+        }, "Full Name"), /*#__PURE__*/_reactDefault.default.createElement("input", {
+          type: "text",
+          className: "form-control",
+          id: "name",
+          name: "name",
+          value: this.state.name,
+          onChange: this.onChange,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 55,
+            columnNumber: 25
+          }
+        }), /*#__PURE__*/_reactDefault.default.createElement("br", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 62,
+            columnNumber: 27
+          }
+        }), /*#__PURE__*/_reactDefault.default.createElement("span", {
+          style: {
+            color: "white"
+          },
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 64,
+            columnNumber: 25
+          }
+        }, "Email Address"), /*#__PURE__*/_reactDefault.default.createElement("input", {
+          type: "email",
+          className: "form-control",
+          id: "email",
+          name: "email",
+          value: this.state.email,
+          onChange: this.onChange,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 65,
+            columnNumber: 25
+          }
+        }), /*#__PURE__*/_reactDefault.default.createElement("br", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 72,
+            columnNumber: 27
+          }
+        }), /*#__PURE__*/_reactDefault.default.createElement("span", {
+          style: {
+            color: "white"
+          },
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 74,
+            columnNumber: 25
+          }
+        }, "Phone Number"), /*#__PURE__*/_reactDefault.default.createElement("input", {
+          type: "tel",
+          pattern: "[0-9]{10}",
+          className: "form-control",
+          id: "phone",
+          name: "phone",
+          value: this.state.phone,
+          onChange: this.onChange,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 75,
+            columnNumber: 25
+          }
+        }), /*#__PURE__*/_reactDefault.default.createElement("br", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 83,
+            columnNumber: 27
+          }
+        }), /*#__PURE__*/_reactDefault.default.createElement("span", {
+          style: {
+            color: "white"
+          },
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 85,
+            columnNumber: 25
+          }
+        }, "Payment Date"), /*#__PURE__*/_reactDefault.default.createElement("input", {
+          type: "date",
+          className: "form-control",
+          id: "payDate",
+          name: "payDate",
+          value: this.state.payDate,
+          onChange: this.onChange,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 86,
+            columnNumber: 25
+          }
+        }), /*#__PURE__*/_reactDefault.default.createElement("br", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 93,
+            columnNumber: 27
+          }
+        }), /*#__PURE__*/_reactDefault.default.createElement("span", {
+          style: {
+            color: "white"
+          },
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 95,
+            columnNumber: 25
+          }
+        }, "Payment Amount"), /*#__PURE__*/_reactDefault.default.createElement("input", {
+          type: "text",
+          className: "form-control",
+          id: "payAmount",
+          name: "payAmount",
+          value: this.state.payAmount,
+          onChange: this.onChange,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 96,
+            columnNumber: 25
+          }
+        }), /*#__PURE__*/_reactDefault.default.createElement("br", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 103,
+            columnNumber: 27
+          }
+        }), /*#__PURE__*/_reactDefault.default.createElement("span", {
+          style: {
+            color: "white"
+          },
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 105,
+            columnNumber: 25
+          }
+        }, "Bank Account Number"), /*#__PURE__*/_reactDefault.default.createElement("input", {
+          type: "text",
+          className: "form-control",
+          id: "accountNo",
+          name: "accountNo",
+          value: this.state.accountNo,
+          onChange: this.onChange,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 106,
+            columnNumber: 25
+          }
+        }), /*#__PURE__*/_reactDefault.default.createElement("br", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 113,
+            columnNumber: 27
+          }
+        }), /*#__PURE__*/_reactDefault.default.createElement("button", {
+          type: "submit",
+          className: "btn btn-primary",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 115,
+            columnNumber: 25
+          }
+        }, "Submit"))), /*#__PURE__*/_reactDefault.default.createElement("br", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 117,
+            columnNumber: 23
+          }
+        }))
+      );
+    }
+  }
+  exports.default = AddAttendees;
+  helpers.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}

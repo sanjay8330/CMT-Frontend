@@ -1,0 +1,385 @@
+var helpers = require("../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+helpers.prelude(module);
+try {
+  var _parcelHelpers = require("@parcel/transformer-js/lib/esmodule-helpers.js");
+  _parcelHelpers.defineInteropFlag(exports);
+  var _react = require('react');
+  var _reactDefault = _parcelHelpers.interopDefault(_react);
+  var _axios = require('axios');
+  var _axiosDefault = _parcelHelpers.interopDefault(_axios);
+  var _Header_FooterAdminHeader = require('../Header_Footer/adminHeader');
+  var _Header_FooterAdminHeaderDefault = _parcelHelpers.interopDefault(_Header_FooterAdminHeader);
+  require('../../css/App.css');
+  var _jsxFileName = "C:\\Users\\HP\\Desktop\\Assignments\\CMT-Frontend\\components\\AdminRole\\viewWorkshops.js";
+  class ViewWorkshop extends _react.Component {
+    // initializing the states
+    constructor(props) {
+      super(props);
+      this.navigateToAddWorkshop = this.navigateToAddWorkshop.bind(this);
+      this.navigateToNAWorkshop = this.navigateToNAWorkshop.bind(this);
+      this.state = {
+        approvedWorkshops: []
+      };
+    }
+    /*retrieving all workshops*/
+    componentDidMount() {
+      _axiosDefault.default.get('http://localhost:3001/workshop/readAllApprovedWorkshops/').then(response => {
+        this.setState({
+          approvedWorkshops: response.data
+        });
+      }).catch(error => {
+        alert('Error ', error.message);
+      });
+    }
+    /*Navigating to the add workshop page*/
+    navigateToAddWorkshop(e) {
+      window.location = '/addWorkshop';
+    }
+    navigateToNAWorkshop(e) {
+      window.location = '/getNAWorkshop';
+    }
+    render() {
+      return (
+        /*#__PURE__*/_reactDefault.default.createElement("div", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 38,
+            columnNumber: 13
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement(_Header_FooterAdminHeaderDefault.default, {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 39,
+            columnNumber: 17
+          }
+        }), /*#__PURE__*/_reactDefault.default.createElement("br", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 39,
+            columnNumber: 27
+          }
+        }), /*#__PURE__*/_reactDefault.default.createElement("br", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 39,
+            columnNumber: 33
+          }
+        }), /*#__PURE__*/_reactDefault.default.createElement("br", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 39,
+            columnNumber: 39
+          }
+        }), /*#__PURE__*/_reactDefault.default.createElement("div", {
+          className: "container1",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 40,
+            columnNumber: 17
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement("div", {
+          class: "sidenavAdmin",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 42,
+            columnNumber: 21
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement("a", {
+          href: "#",
+          onClick: this.navigateToNAWorkshop,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 43,
+            columnNumber: 25
+          }
+        }, "Workshops waiting for Reviewer Approval"), /*#__PURE__*/_reactDefault.default.createElement("a", {
+          href: "#",
+          onClick: this.navigateToAddWorkshop,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 44,
+            columnNumber: 25
+          }
+        }, "Add New Workshops")), /*#__PURE__*/_reactDefault.default.createElement("br", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 45,
+            columnNumber: 27
+          }
+        }), /*#__PURE__*/_reactDefault.default.createElement("br", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 45,
+            columnNumber: 33
+          }
+        }), /*#__PURE__*/_reactDefault.default.createElement("br", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 45,
+            columnNumber: 39
+          }
+        }), /*#__PURE__*/_reactDefault.default.createElement("br", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 45,
+            columnNumber: 45
+          }
+        }), /*#__PURE__*/_reactDefault.default.createElement("center", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 47,
+            columnNumber: 21
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement("h1", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 47,
+            columnNumber: 29
+          }
+        }, "Workshop Details approved by Reviewer - ADMIN VIEW")), /*#__PURE__*/_reactDefault.default.createElement("hr", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 47,
+            columnNumber: 97
+          }
+        }), /*#__PURE__*/_reactDefault.default.createElement("br", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 47,
+            columnNumber: 103
+          }
+        }), /*#__PURE__*/_reactDefault.default.createElement("center", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 49,
+            columnNumber: 21
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement("p", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 49,
+            columnNumber: 29
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement("b", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 49,
+            columnNumber: 32
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement("mark", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 49,
+            columnNumber: 35
+          }
+        }, "**Note: Hi Admin, you can only view the approved workshops which are reserved/unreserved at conference***")))), /*#__PURE__*/_reactDefault.default.createElement("table", {
+          class: "table border shadow",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 51,
+            columnNumber: 21
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement("thead", {
+          class: "thead-dark",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 52,
+            columnNumber: 25
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement("tr", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 53,
+            columnNumber: 29
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement("th", {
+          scope: "col",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 54,
+            columnNumber: 33
+          }
+        }, "NAME"), /*#__PURE__*/_reactDefault.default.createElement("th", {
+          scope: "col",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 55,
+            columnNumber: 33
+          }
+        }, "EMAIL"), /*#__PURE__*/_reactDefault.default.createElement("th", {
+          scope: "col",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 56,
+            columnNumber: 33
+          }
+        }, "PHONE"), /*#__PURE__*/_reactDefault.default.createElement("th", {
+          scope: "col",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 57,
+            columnNumber: 33
+          }
+        }, "TITLE"), /*#__PURE__*/_reactDefault.default.createElement("th", {
+          scope: "col",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 58,
+            columnNumber: 33
+          }
+        }, "DESCRIPTION"), /*#__PURE__*/_reactDefault.default.createElement("th", {
+          scope: "col",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 59,
+            columnNumber: 33
+          }
+        }, "SPEAKERS"), /*#__PURE__*/_reactDefault.default.createElement("th", {
+          scope: "col",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 60,
+            columnNumber: 33
+          }
+        }, "REVIEWER APPROVAL STATUS"), /*#__PURE__*/_reactDefault.default.createElement("th", {
+          scope: "col",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 61,
+            columnNumber: 33
+          }
+        }, "EVENT STATUS"))), /*#__PURE__*/_reactDefault.default.createElement("tbody", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 64,
+            columnNumber: 25
+          }
+        }, this.state.approvedWorkshops.length > 0 && this.state.approvedWorkshops.map((item, index) => /*#__PURE__*/_reactDefault.default.createElement("tr", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 66,
+            columnNumber: 33
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement("td", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 67,
+            columnNumber: 37
+          }
+        }, item.workshopConductorName), /*#__PURE__*/_reactDefault.default.createElement("td", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 68,
+            columnNumber: 37
+          }
+        }, item.workshopConductorEmail), /*#__PURE__*/_reactDefault.default.createElement("td", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 69,
+            columnNumber: 37
+          }
+        }, item.workshopConductorPhone), /*#__PURE__*/_reactDefault.default.createElement("td", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 70,
+            columnNumber: 37
+          }
+        }, item.workshopTitle), /*#__PURE__*/_reactDefault.default.createElement("td", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 71,
+            columnNumber: 37
+          }
+        }, item.workshopDescription), /*#__PURE__*/_reactDefault.default.createElement("td", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 72,
+            columnNumber: 37
+          }
+        }, item.workshopSpeakers), /*#__PURE__*/_reactDefault.default.createElement("td", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 73,
+            columnNumber: 37
+          }
+        }, item.approvalStatus), /*#__PURE__*/_reactDefault.default.createElement("td", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 74,
+            columnNumber: 37
+          }
+        }, item.eventStatus)))))), /*#__PURE__*/_reactDefault.default.createElement("br", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 80,
+            columnNumber: 23
+          }
+        }), /*#__PURE__*/_reactDefault.default.createElement("br", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 80,
+            columnNumber: 29
+          }
+        }), /*#__PURE__*/_reactDefault.default.createElement("br", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 80,
+            columnNumber: 35
+          }
+        }))
+      );
+    }
+  }
+  exports.default = ViewWorkshop;
+  helpers.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}

@@ -1,0 +1,256 @@
+var helpers = require("../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+helpers.prelude(module);
+try {
+  var _parcelHelpers = require("@parcel/transformer-js/lib/esmodule-helpers.js");
+  _parcelHelpers.defineInteropFlag(exports);
+  var _react = require('react');
+  var _reactDefault = _parcelHelpers.interopDefault(_react);
+  var _jsxFileName = "C:\\Users\\HP\\Desktop\\Assignments\\CMT-Frontend\\components\\Header_Footer\\adminHeader.js";
+  class Header extends _react.Component {
+    constructor(props) {
+      super(props);
+      this.navigateToUserAdd = this.navigateToUserAdd.bind(this);
+      this.navigateToWorkshop = this.navigateToWorkshop.bind(this);
+      this.navigateToResearch = this.navigateToResearch.bind(this);
+    }
+    navigateToUserAdd(e) {
+      window.location = '/addUser';
+    }
+    navigateToWorkshop(e) {
+      window.location = '/adminWorkshops';
+    }
+    navigateToResearch(e) {
+      window.location = '/adminResearches';
+    }
+    render() {
+      return (
+        /*#__PURE__*/_reactDefault.default.createElement("div", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 27,
+            columnNumber: 13
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement("header", {
+          id: "header",
+          class: "d-flex align-items-center ",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 28,
+            columnNumber: 17
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement("div", {
+          class: "container-fluid container-xxl d-flex align-items-center",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 29,
+            columnNumber: 21
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement("div", {
+          id: "logo",
+          class: "me-auto",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 31,
+            columnNumber: 25
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement("h1", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 32,
+            columnNumber: 29
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement("a", {
+          href: "index.html",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 32,
+            columnNumber: 33
+          }
+        }, "CMT-", /*#__PURE__*/_reactDefault.default.createElement("span", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 32,
+            columnNumber: 58
+          }
+        }, "2021")))), /*#__PURE__*/_reactDefault.default.createElement("nav", {
+          id: "navbar",
+          class: "navbar order-last order-lg-0",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 34,
+            columnNumber: 25
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement("ul", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 35,
+            columnNumber: 29
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement("li", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 36,
+            columnNumber: 33
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement("a", {
+          class: "nav-link scrollto active",
+          href: "/dashboard",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 36,
+            columnNumber: 37
+          }
+        }, "ADMIN")), /*#__PURE__*/_reactDefault.default.createElement("li", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 37,
+            columnNumber: 33
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement("a", {
+          class: "nav-link scrollto",
+          href: "#",
+          onClick: this.navigateToWorkshop,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 37,
+            columnNumber: 37
+          }
+        }, "Workshop")), /*#__PURE__*/_reactDefault.default.createElement("li", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 38,
+            columnNumber: 33
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement("a", {
+          class: "nav-link scrollto",
+          href: "#",
+          onClick: this.navigateToResearch,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 38,
+            columnNumber: 37
+          }
+        }, "Research Papers")), /*#__PURE__*/_reactDefault.default.createElement("li", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 39,
+            columnNumber: 33
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement("a", {
+          class: "nav-link scrollto",
+          href: "/adminViewConference",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 39,
+            columnNumber: 37
+          }
+        }, "Conference")), /*#__PURE__*/_reactDefault.default.createElement("li", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 40,
+            columnNumber: 33
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement("a", {
+          class: "nav-link scrollto",
+          href: "/#",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 40,
+            columnNumber: 37
+          }
+        }, "Research Paper Author Payments")), /*#__PURE__*/_reactDefault.default.createElement("li", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 41,
+            columnNumber: 33
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement("a", {
+          class: "nav-link scrollto",
+          href: "/#",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 41,
+            columnNumber: 37
+          }
+        }, "Attendee Payments")), /*#__PURE__*/_reactDefault.default.createElement("li", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 42,
+            columnNumber: 33
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement("a", {
+          class: "nav-link scrollto",
+          href: "/checkEvents",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 42,
+            columnNumber: 37
+          }
+        }, "Conference Events")), /*#__PURE__*/_reactDefault.default.createElement("li", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 43,
+            columnNumber: 33
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement("a", {
+          class: "nav-link scrollto",
+          href: "#",
+          onClick: this.navigateToUserAdd,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 43,
+            columnNumber: 37
+          }
+        }, "Users")), /*#__PURE__*/_reactDefault.default.createElement("li", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 44,
+            columnNumber: 33
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement("a", {
+          class: "nav-link scrollto",
+          href: "/",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 44,
+            columnNumber: 37
+          }
+        }, "Logout")))))))
+      );
+    }
+  }
+  exports.default = Header;
+  helpers.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}

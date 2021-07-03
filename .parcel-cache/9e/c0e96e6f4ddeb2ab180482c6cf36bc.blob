@@ -1,0 +1,15 @@
+var _parcelHelpers = require("@parcel/transformer-js/lib/esmodule-helpers.js");
+_parcelHelpers.defineInteropFlag(exports);
+var _firebase = require('firebase');
+var _firebaseDefault = _parcelHelpers.interopDefault(_firebase);
+const config = {
+  apiKey: "AIzaSyC7Qfy-xpOJ9qFKTrEe8FDQjk9vlTaUPAQ",
+  authDomain: "cmt-af.firebaseapp.com",
+  projectId: "cmt-af",
+  storageBucket: "cmt-af.appspot.com",
+  messagingSenderId: "136965909693",
+  appId: "1:136965909693:web:59a889bc6f30d64b369bd4",
+  measurementId: "G-GF4X8KM2S3"
+};
+_firebaseDefault.default.initializeApp(config);
+exports.default = _firebaseDefault.default;

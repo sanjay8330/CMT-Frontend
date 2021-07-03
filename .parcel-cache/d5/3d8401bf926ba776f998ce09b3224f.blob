@@ -1,0 +1,412 @@
+var helpers = require("../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+helpers.prelude(module);
+try {
+  var _parcelHelpers = require("@parcel/transformer-js/lib/esmodule-helpers.js");
+  _parcelHelpers.defineInteropFlag(exports);
+  var _react = require('react');
+  var _reactDefault = _parcelHelpers.interopDefault(_react);
+  var _axios = require('axios');
+  var _axiosDefault = _parcelHelpers.interopDefault(_axios);
+  var _componentsHeader_FooterLoggedHeader = require('../../components/Header_Footer/loggedHeader');
+  var _componentsHeader_FooterLoggedHeaderDefault = _parcelHelpers.interopDefault(_componentsHeader_FooterLoggedHeader);
+  var _FirebaseFirebase = require('../../Firebase/firebase');
+  var _FirebaseFirebaseDefault = _parcelHelpers.interopDefault(_FirebaseFirebase);
+  var _jsxFileName = "C:\\Users\\HP\\Desktop\\Assignments\\CMT-Frontend\\components\\Workshops\\createWorkshop.js";
+  const initialStates = {
+    "conductorName": '',
+    "conductorEmail": '',
+    "conductorPhone": '',
+    "workshopTitle": '',
+    "workshopDescription": '',
+    "workshopSpeakers": '',
+    "fileURL": '',
+    "eventStatus": 'Unreserved'
+  };
+  class AddWorkshop extends _react.Component {
+    constructor(props) {
+      super(props);
+      this.onChange = this.onChange.bind(this);
+      this.onSubmit = this.onSubmit.bind(this);
+      this.onFileChange = this.onFileChange.bind(this);
+      this.state = initialStates;
+    }
+    onChange(e) {
+      this.setState({
+        [e.target.name]: e.target.value
+      });
+    }
+    async onFileChange(e) {
+      const file = e.target.files[0];
+      const storageRef = _FirebaseFirebaseDefault.default.storage().ref();
+      const fileRef = storageRef.child(file.name);
+      await fileRef.put(file).then(() => {
+        alert('File Uploaded Successfully!!', file.name);
+        document.getElementById("submitBtn").disabled = false;
+      });
+      const downloadURL = await fileRef.getDownloadURL();
+      console.log('Download URL', downloadURL);
+      this.setState({
+        fileURL: downloadURL
+      });
+    }
+    onSubmit(e) {
+      e.preventDefault();
+      let workshop = {
+        "workshopConductorName": this.state.conductorName,
+        "workshopConductorEmail": this.state.conductorEmail,
+        "workshopConductorPhone": this.state.conductorPhone,
+        "workshopTitle": this.state.workshopTitle,
+        "workshopDescription": this.state.workshopDescription,
+        "workshopSpeakers": this.state.workshopSpeakers,
+        "approvalStatus": 'Approval Pending',
+        "downloadURL": this.state.fileURL,
+        "eventStatus": this.state.eventStatus
+      };
+      _axiosDefault.default.post('http://localhost:3001/workshop/insertWorkshop', workshop).then(response => {
+        alert('Workshop Details Added Successfully');
+        window.location = `/loggedHome/${this.state.conductorEmail}`;
+      }).catch(error => {
+        alert('Error ', error.message);
+      });
+    }
+    render() {
+      return (
+        /*#__PURE__*/_reactDefault.default.createElement("div", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 78,
+            columnNumber: 13
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement(_componentsHeader_FooterLoggedHeaderDefault.default, {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 79,
+            columnNumber: 17
+          }
+        }), /*#__PURE__*/_reactDefault.default.createElement("br", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 79,
+            columnNumber: 27
+          }
+        }), /*#__PURE__*/_reactDefault.default.createElement("br", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 79,
+            columnNumber: 33
+          }
+        }), /*#__PURE__*/_reactDefault.default.createElement("br", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 79,
+            columnNumber: 39
+          }
+        }), /*#__PURE__*/_reactDefault.default.createElement("br", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 79,
+            columnNumber: 45
+          }
+        }), /*#__PURE__*/_reactDefault.default.createElement("br", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 79,
+            columnNumber: 51
+          }
+        }), /*#__PURE__*/_reactDefault.default.createElement("div", {
+          className: "add1",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 80,
+            columnNumber: 17
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement("center", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 81,
+            columnNumber: 21
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement("h2", {
+          class: "log",
+          style: {
+            color: "white"
+          },
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 81,
+            columnNumber: 29
+          }
+        }, "Add Workshop Details")), /*#__PURE__*/_reactDefault.default.createElement("br", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 81,
+            columnNumber: 106
+          }
+        }), /*#__PURE__*/_reactDefault.default.createElement("form", {
+          onSubmit: this.onSubmit,
+          style: {
+            height: "100px;"
+          },
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 82,
+            columnNumber: 21
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement("span", {
+          style: {
+            color: "white"
+          },
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 84,
+            columnNumber: 25
+          }
+        }, "Workshop Conductor Name"), /*#__PURE__*/_reactDefault.default.createElement("input", {
+          type: "text",
+          className: "form-control",
+          id: "conductorName",
+          name: "conductorName",
+          value: this.state.conductorName,
+          onChange: this.onChange,
+          required: true,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 85,
+            columnNumber: 25
+          }
+        }), /*#__PURE__*/_reactDefault.default.createElement("br", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 93,
+            columnNumber: 27
+          }
+        }), /*#__PURE__*/_reactDefault.default.createElement("span", {
+          style: {
+            color: "white"
+          },
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 95,
+            columnNumber: 25
+          }
+        }, "Workshop Conductor Email"), /*#__PURE__*/_reactDefault.default.createElement("input", {
+          type: "email",
+          className: "form-control",
+          id: "conductorEmail",
+          name: "conductorEmail",
+          value: this.state.conductorEmail,
+          onChange: this.onChange,
+          required: true,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 96,
+            columnNumber: 25
+          }
+        }), /*#__PURE__*/_reactDefault.default.createElement("br", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 104,
+            columnNumber: 27
+          }
+        }), /*#__PURE__*/_reactDefault.default.createElement("span", {
+          style: {
+            color: "white"
+          },
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 106,
+            columnNumber: 25
+          }
+        }, "Workshop Conductor Phone"), /*#__PURE__*/_reactDefault.default.createElement("input", {
+          type: "tel",
+          pattern: "[0-9]{10}",
+          className: "form-control",
+          id: "conductorPhone",
+          name: "conductorPhone",
+          value: this.state.conductorPhone,
+          onChange: this.onChange,
+          required: true,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 107,
+            columnNumber: 25
+          }
+        }), /*#__PURE__*/_reactDefault.default.createElement("br", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 116,
+            columnNumber: 27
+          }
+        }), /*#__PURE__*/_reactDefault.default.createElement("span", {
+          style: {
+            color: "white"
+          },
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 118,
+            columnNumber: 25
+          }
+        }, "Workshop Title"), /*#__PURE__*/_reactDefault.default.createElement("input", {
+          type: "text",
+          className: "form-control",
+          id: "workshopTitle",
+          name: "workshopTitle",
+          value: this.state.workshopTitle,
+          onChange: this.onChange,
+          required: true,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 119,
+            columnNumber: 25
+          }
+        }), /*#__PURE__*/_reactDefault.default.createElement("br", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 127,
+            columnNumber: 27
+          }
+        }), /*#__PURE__*/_reactDefault.default.createElement("span", {
+          style: {
+            color: "white"
+          },
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 129,
+            columnNumber: 25
+          }
+        }, "Workshop Description"), /*#__PURE__*/_reactDefault.default.createElement("textarea", {
+          className: "form-control",
+          id: "exampleFormControlTextarea1",
+          rows: "3",
+          name: "workshopDescription",
+          value: this.state.workshopDescription,
+          onChange: this.onChange,
+          required: true,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 130,
+            columnNumber: 25
+          }
+        }), /*#__PURE__*/_reactDefault.default.createElement("br", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 138,
+            columnNumber: 36
+          }
+        }), /*#__PURE__*/_reactDefault.default.createElement("span", {
+          style: {
+            color: "white"
+          },
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 140,
+            columnNumber: 25
+          }
+        }, "Workshop Speakers"), /*#__PURE__*/_reactDefault.default.createElement("textarea", {
+          className: "form-control",
+          id: "workshopSpeakers",
+          rows: "3",
+          name: "workshopSpeakers",
+          value: this.state.workshopSpeakers,
+          onChange: this.onChange,
+          required: true,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 141,
+            columnNumber: 25
+          }
+        }), /*#__PURE__*/_reactDefault.default.createElement("br", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 149,
+            columnNumber: 36
+          }
+        }), /*#__PURE__*/_reactDefault.default.createElement("span", {
+          style: {
+            color: "white"
+          },
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 151,
+            columnNumber: 25
+          }
+        }, "Upload Workshop Flyer"), /*#__PURE__*/_reactDefault.default.createElement("input", {
+          type: "file",
+          className: "form-control",
+          id: "file",
+          name: "file",
+          onChange: this.onFileChange,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 152,
+            columnNumber: 25
+          }
+        }), /*#__PURE__*/_reactDefault.default.createElement("br", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 158,
+            columnNumber: 27
+          }
+        }), /*#__PURE__*/_reactDefault.default.createElement("button", {
+          type: "submit",
+          className: "btn btn-primary",
+          id: "submitBtn",
+          disabled: true,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 160,
+            columnNumber: 25
+          }
+        }, "Submit"))), /*#__PURE__*/_reactDefault.default.createElement("br", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 162,
+            columnNumber: 23
+          }
+        }))
+      );
+    }
+  }
+  exports.default = AddWorkshop;
+  helpers.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}

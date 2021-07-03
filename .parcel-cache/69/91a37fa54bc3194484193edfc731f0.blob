@@ -1,0 +1,69 @@
+var _parcelHelpers = require("@parcel/transformer-js/lib/esmodule-helpers.js");
+_parcelHelpers.defineInteropFlag(exports);
+_parcelHelpers.export(exports, "registerFirestore", function () {
+  return P;
+});
+var _firebaseApp = require("@firebase/app");
+var _firebaseAppDefault = _parcelHelpers.interopDefault(_firebaseApp);
+require("@firebase/util");
+require("@firebase/logger");
+require("@firebase/webchannel-wrapper");
+require("tslib");
+var _prebuiltDb9cc925Eb007c37Js = require("./prebuilt-db9cc925-eb007c37.js");
+var _firebaseComponent = require("@firebase/component");
+var I = {
+  Firestore: _prebuiltDb9cc925Eb007c37Js.q,
+  GeoPoint: _prebuiltDb9cc925Eb007c37Js.D,
+  Timestamp: _prebuiltDb9cc925Eb007c37Js.O,
+  Blob: _prebuiltDb9cc925Eb007c37Js.a,
+  Transaction: _prebuiltDb9cc925Eb007c37Js.K,
+  WriteBatch: _prebuiltDb9cc925Eb007c37Js.j,
+  DocumentReference: _prebuiltDb9cc925Eb007c37Js.G,
+  DocumentSnapshot: _prebuiltDb9cc925Eb007c37Js.Y,
+  Query: _prebuiltDb9cc925Eb007c37Js.Z,
+  QueryDocumentSnapshot: _prebuiltDb9cc925Eb007c37Js.X,
+  QuerySnapshot: _prebuiltDb9cc925Eb007c37Js.e,
+  CollectionReference: _prebuiltDb9cc925Eb007c37Js.n,
+  FieldPath: _prebuiltDb9cc925Eb007c37Js.i,
+  FieldValue: _prebuiltDb9cc925Eb007c37Js.r,
+  setLogLevel: _prebuiltDb9cc925Eb007c37Js.Q,
+  CACHE_SIZE_UNLIMITED: _prebuiltDb9cc925Eb007c37Js.p
+};
+/**
+* @license
+* Copyright 2017 Google LLC
+*
+* Licensed under the Apache License, Version 2.0 (the "License");
+* you may not use this file except in compliance with the License.
+* You may obtain a copy of the License at
+*
+*   http://www.apache.org/licenses/LICENSE-2.0
+*
+* Unless required by applicable law or agreed to in writing, software
+* distributed under the License is distributed on an "AS IS" BASIS,
+* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+* See the License for the specific language governing permissions and
+* limitations under the License.
+*/
+/**
+* Registers the main Firestore build with the components framework.
+* Persistence can be enabled via `firebase.firestore().enablePersistence()`.
+*/
+function P(e) {
+  (!/**
+  * Configures Firestore as part of the Firebase SDK by calling registerService.
+  *
+  * @param firebase - The FirebaseNamespace to register Firestore with
+  * @param firestoreFactory - A factory function that returns a new Firestore
+  *    instance.
+  */
+  (function (e, r) {
+    e.INTERNAL.registerComponent(new _firebaseComponent.Component("firestore", function (e) {
+      var t = e.getProvider("app").getImmediate();
+      return r(t, e.getProvider("auth-internal"));
+    }, "PUBLIC").setServiceProps(Object.assign({}, I)));
+  })(e, function (e, s) {
+    return new _prebuiltDb9cc925Eb007c37Js.q(e, new _prebuiltDb9cc925Eb007c37Js.E(e, s), new _prebuiltDb9cc925Eb007c37Js.B());
+  }), e.registerVersion("@firebase/firestore", "2.3.3"));
+}
+P(_firebaseAppDefault.default);

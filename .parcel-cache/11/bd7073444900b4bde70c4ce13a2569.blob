@@ -1,0 +1,381 @@
+var helpers = require("../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+helpers.prelude(module);
+try {
+  var _parcelHelpers = require("@parcel/transformer-js/lib/esmodule-helpers.js");
+  _parcelHelpers.defineInteropFlag(exports);
+  var _react = require('react');
+  var _reactDefault = _parcelHelpers.interopDefault(_react);
+  var _axios = require('axios');
+  var _axiosDefault = _parcelHelpers.interopDefault(_axios);
+  var _componentsHeader_FooterLoggedHeader = require('../../components/Header_Footer/loggedHeader');
+  var _componentsHeader_FooterLoggedHeaderDefault = _parcelHelpers.interopDefault(_componentsHeader_FooterLoggedHeader);
+  var _FirebaseFirebase = require('../../Firebase/firebase');
+  var _FirebaseFirebaseDefault = _parcelHelpers.interopDefault(_FirebaseFirebase);
+  var _jsxFileName = "C:\\Users\\HP\\Desktop\\Assignments\\CMT-Frontend\\components\\Research\\createResearch.js";
+  const initialStates = {
+    "authorName": '',
+    "authorEmail": '',
+    "authorPhone": '',
+    "title": '',
+    "description": '',
+    "approvalStatus": 'Pending Approval',
+    "fileURL": '',
+    "eventStatus": 'Unreserved'
+  };
+  class AddResearch extends _react.Component {
+    constructor(props) {
+      super(props);
+      this.onChange = this.onChange.bind(this);
+      this.onSubmit = this.onSubmit.bind(this);
+      this.onFileChange = this.onFileChange.bind(this);
+      this.state = initialStates;
+    }
+    onChange(e) {
+      this.setState({
+        [e.target.name]: e.target.value
+      });
+    }
+    async onFileChange(e) {
+      const file = e.target.files[0];
+      const storageRef = _FirebaseFirebaseDefault.default.storage().ref();
+      const fileRef = storageRef.child(file.name);
+      await fileRef.put(file).then(() => {
+        alert('File Uploaded Successfully!!', file.name);
+        document.getElementById("submitBtn").disabled = false;
+      });
+      const downloadURL = await fileRef.getDownloadURL();
+      console.log('Download URL', downloadURL);
+      this.setState({
+        fileURL: downloadURL
+      });
+    }
+    onSubmit(e) {
+      e.preventDefault();
+      let research = {
+        "authorName": this.state.authorName,
+        "authorEmail": this.state.authorEmail,
+        "authorContact": this.state.authorPhone,
+        "researchTitle": this.state.title,
+        "researchDescription": this.state.description,
+        "approvalStatus": this.state.approvalStatus,
+        "downloadURL": this.state.fileURL,
+        "eventStatus": this.state.eventStatus
+      };
+      _axiosDefault.default.post('https://conference-tool-app.herokuapp.com/research/insertResearch', research).then(response => {
+        alert('Research Paper Added Successfully');
+        window.location = `/loggedHome/${this.state.authorEmail}`;
+      }).catch(error => {
+        alert('Error :', error.message);
+      });
+    }
+    render() {
+      return (
+        /*#__PURE__*/_reactDefault.default.createElement("div", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 66,
+            columnNumber: 13
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement(_componentsHeader_FooterLoggedHeaderDefault.default, {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 67,
+            columnNumber: 17
+          }
+        }), /*#__PURE__*/_reactDefault.default.createElement("br", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 67,
+            columnNumber: 27
+          }
+        }), /*#__PURE__*/_reactDefault.default.createElement("br", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 67,
+            columnNumber: 33
+          }
+        }), /*#__PURE__*/_reactDefault.default.createElement("br", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 67,
+            columnNumber: 39
+          }
+        }), /*#__PURE__*/_reactDefault.default.createElement("br", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 67,
+            columnNumber: 45
+          }
+        }), /*#__PURE__*/_reactDefault.default.createElement("br", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 67,
+            columnNumber: 51
+          }
+        }), /*#__PURE__*/_reactDefault.default.createElement("div", {
+          className: "add3",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 68,
+            columnNumber: 17
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement("center", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 69,
+            columnNumber: 21
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement("h2", {
+          class: "log",
+          style: {
+            color: "white"
+          },
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 69,
+            columnNumber: 29
+          }
+        }, "Add Research Paper Details")), /*#__PURE__*/_reactDefault.default.createElement("br", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 69,
+            columnNumber: 112
+          }
+        }), /*#__PURE__*/_reactDefault.default.createElement("form", {
+          onSubmit: this.onSubmit,
+          style: {
+            height: "100px"
+          },
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 70,
+            columnNumber: 21
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement("span", {
+          style: {
+            color: "white"
+          },
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 72,
+            columnNumber: 25
+          }
+        }, "Research Paper Author Name"), /*#__PURE__*/_reactDefault.default.createElement("input", {
+          type: "text",
+          className: "form-control",
+          id: "authorName",
+          name: "authorName",
+          value: this.state.authorName,
+          onChange: this.onChange,
+          required: true,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 73,
+            columnNumber: 25
+          }
+        }), /*#__PURE__*/_reactDefault.default.createElement("br", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 81,
+            columnNumber: 27
+          }
+        }), /*#__PURE__*/_reactDefault.default.createElement("span", {
+          style: {
+            color: "white"
+          },
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 83,
+            columnNumber: 25
+          }
+        }, "Research Paper Author Email"), /*#__PURE__*/_reactDefault.default.createElement("input", {
+          type: "email",
+          className: "form-control",
+          id: "authorEmail",
+          name: "authorEmail",
+          value: this.state.authorEmail,
+          onChange: this.onChange,
+          required: true,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 84,
+            columnNumber: 25
+          }
+        }), /*#__PURE__*/_reactDefault.default.createElement("br", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 92,
+            columnNumber: 27
+          }
+        }), /*#__PURE__*/_reactDefault.default.createElement("span", {
+          style: {
+            color: "white"
+          },
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 94,
+            columnNumber: 25
+          }
+        }, "Research Paper Author Phone"), /*#__PURE__*/_reactDefault.default.createElement("input", {
+          type: "tel",
+          pattern: "[0-9]{10}",
+          className: "form-control",
+          id: "authorPhone",
+          name: "authorPhone",
+          value: this.state.authorPhone,
+          onChange: this.onChange,
+          required: true,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 95,
+            columnNumber: 25
+          }
+        }), /*#__PURE__*/_reactDefault.default.createElement("br", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 104,
+            columnNumber: 27
+          }
+        }), /*#__PURE__*/_reactDefault.default.createElement("span", {
+          style: {
+            color: "white"
+          },
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 106,
+            columnNumber: 25
+          }
+        }, "Research Paper Title"), /*#__PURE__*/_reactDefault.default.createElement("input", {
+          type: "text",
+          className: "form-control",
+          id: "title",
+          name: "title",
+          value: this.state.title,
+          onChange: this.onChange,
+          required: true,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 107,
+            columnNumber: 25
+          }
+        }), /*#__PURE__*/_reactDefault.default.createElement("br", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 115,
+            columnNumber: 27
+          }
+        }), /*#__PURE__*/_reactDefault.default.createElement("span", {
+          style: {
+            color: "white"
+          },
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 117,
+            columnNumber: 25
+          }
+        }, "Research Paper Description"), /*#__PURE__*/_reactDefault.default.createElement("textarea", {
+          className: "form-control",
+          id: "description",
+          rows: "3",
+          name: "description",
+          value: this.state.description,
+          onChange: this.onChange,
+          required: true,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 118,
+            columnNumber: 25
+          }
+        }), /*#__PURE__*/_reactDefault.default.createElement("br", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 126,
+            columnNumber: 36
+          }
+        }), /*#__PURE__*/_reactDefault.default.createElement("span", {
+          style: {
+            color: "white"
+          },
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 128,
+            columnNumber: 25
+          }
+        }, "Upload Research Paper"), /*#__PURE__*/_reactDefault.default.createElement("input", {
+          type: "file",
+          className: "form-control",
+          id: "file",
+          name: "file",
+          onChange: this.onFileChange,
+          required: true,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 129,
+            columnNumber: 25
+          }
+        }), /*#__PURE__*/_reactDefault.default.createElement("br", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 136,
+            columnNumber: 27
+          }
+        }), /*#__PURE__*/_reactDefault.default.createElement("button", {
+          type: "submit",
+          className: "btn btn-primary",
+          id: "submitBtn",
+          disabled: true,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 138,
+            columnNumber: 25
+          }
+        }, "Submit"))), /*#__PURE__*/_reactDefault.default.createElement("br", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 140,
+            columnNumber: 23
+          }
+        }))
+      );
+    }
+  }
+  exports.default = AddResearch;
+  helpers.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}

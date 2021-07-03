@@ -1,0 +1,267 @@
+var helpers = require("../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+helpers.prelude(module);
+try {
+  var _parcelHelpers = require("@parcel/transformer-js/lib/esmodule-helpers.js");
+  _parcelHelpers.defineInteropFlag(exports);
+  var _react = require('react');
+  var _reactDefault = _parcelHelpers.interopDefault(_react);
+  var _axios = require('axios');
+  var _axiosDefault = _parcelHelpers.interopDefault(_axios);
+  var _Header_FooterEditorHeader = require('../Header_Footer/editorHeader');
+  var _Header_FooterEditorHeaderDefault = _parcelHelpers.interopDefault(_Header_FooterEditorHeader);
+  require('../../css/App.css');
+  var _reactSelect = require('react-select');
+  var _reactSelectDefault = _parcelHelpers.interopDefault(_reactSelect);
+  var _jsxFileName = "C:\\Users\\HP\\Desktop\\Assignments\\CMT-Frontend\\components\\EditorRole\\addConferenceResearch.js";
+  const initialStates = {
+    "conferenceID": '',
+    "researchID": '',
+    "allocatedTime": '',
+    "adminApprovalStatus": 'Pending Approval',
+    "conferenceList": [],
+    "conferenceOption": [],
+    "selectedConference": '',
+    "eventStatus": 'Reserved'
+  };
+  class AddConferenceResearch extends _react.Component {
+    constructor(props) {
+      super(props);
+      this.onChange = this.onChange.bind(this);
+      this.onSubmit = this.onSubmit.bind(this);
+      this.onSelected = this.onSelected.bind(this);
+      this.state = initialStates;
+    }
+    /*Get all available conference names - but pass the ID*/
+    componentDidMount(e) {
+      _axiosDefault.default.get('https://conference-tool-app.herokuapp.com/conference/readAllConferences').then(response => {
+        this.setState({
+          conferenceList: response.data.data
+        }, () => {
+          let data = [];
+          this.state.conferenceList.map((item, key) => {
+            let conference = {
+              value: item._id,
+              label: item.conferenceTitle
+            };
+            data.push(conference);
+          });
+          this.setState({
+            conferenceOption: data
+          });
+        });
+      });
+    }
+    onChange(e) {
+      this.setState({
+        [e.target.name]: e.target.value
+      });
+    }
+    onSubmit(e) {
+      e.preventDefault();
+      let conferenceResearch = {
+        "conference": this.state.selectedConference,
+        "researches": this.props.match.params.id,
+        "allocatedTime": this.state.allocatedTime,
+        "adminApprovalStatus": this.state.adminApprovalStatus
+      };
+      _axiosDefault.default.post('https://conference-tool-app.herokuapp.com/conferenceResearchs/insertConferenceResearches', conferenceResearch).then(response => {
+        let updResearch = {
+          "eventStatus": this.state.eventStatus
+        };
+        _axiosDefault.default.put(`https://conference-tool-app.herokuapp.com/research/changeEventStatus/${this.props.match.params.id}`, updResearch).then(response => {
+          alert('Research Added to conference & Updated');
+          window.location = "/viewEditorResearch";
+        }).catch(error => {
+          alert('Something went wrong!!!');
+        });
+      }).catch(error => {
+        alert('Error ', error.message);
+      });
+    }
+    onSelected(e) {
+      this.setState({
+        selectedConference: e.value
+      });
+    }
+    render() {
+      return (
+        /*#__PURE__*/_reactDefault.default.createElement("div", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 80,
+            columnNumber: 13
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement(_Header_FooterEditorHeaderDefault.default, {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 81,
+            columnNumber: 17
+          }
+        }), /*#__PURE__*/_reactDefault.default.createElement("br", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 81,
+            columnNumber: 27
+          }
+        }), /*#__PURE__*/_reactDefault.default.createElement("br", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 81,
+            columnNumber: 33
+          }
+        }), /*#__PURE__*/_reactDefault.default.createElement("br", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 81,
+            columnNumber: 39
+          }
+        }), /*#__PURE__*/_reactDefault.default.createElement("br", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 81,
+            columnNumber: 45
+          }
+        }), /*#__PURE__*/_reactDefault.default.createElement("br", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 82,
+            columnNumber: 17
+          }
+        }), /*#__PURE__*/_reactDefault.default.createElement("div", {
+          className: "add5",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 83,
+            columnNumber: 17
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement("center", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 84,
+            columnNumber: 21
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement("h2", {
+          class: "log",
+          style: {
+            color: "white"
+          },
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 84,
+            columnNumber: 29
+          }
+        }, "Add Research Paper To Conference")), /*#__PURE__*/_reactDefault.default.createElement("br", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 84,
+            columnNumber: 118
+          }
+        }), /*#__PURE__*/_reactDefault.default.createElement("form", {
+          onSubmit: this.onSubmit,
+          style: {
+            height: "100px;"
+          },
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 85,
+            columnNumber: 21
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement("label", {
+          htmlFor: "conference",
+          className: "form-label",
+          style: {
+            color: "white"
+          },
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 87,
+            columnNumber: 25
+          }
+        }, "Select Conference"), /*#__PURE__*/_reactDefault.default.createElement(_reactSelectDefault.default, {
+          options: this.state.conferenceOption,
+          onChange: this.onSelected,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 88,
+            columnNumber: 25
+          }
+        }), /*#__PURE__*/_reactDefault.default.createElement("br", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 91,
+            columnNumber: 27
+          }
+        }), /*#__PURE__*/_reactDefault.default.createElement("span", {
+          style: {
+            color: "white"
+          },
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 93,
+            columnNumber: 25
+          }
+        }, "Allocated Time at Conference"), /*#__PURE__*/_reactDefault.default.createElement("input", {
+          type: "test",
+          className: "form-control",
+          id: "allocatedTime",
+          name: "allocatedTime",
+          value: this.state.allocatedTime,
+          onChange: this.onChange,
+          required: true,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 94,
+            columnNumber: 25
+          }
+        }), /*#__PURE__*/_reactDefault.default.createElement("br", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 102,
+            columnNumber: 27
+          }
+        }), /*#__PURE__*/_reactDefault.default.createElement("button", {
+          type: "submit",
+          className: "btn btn-primary",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 104,
+            columnNumber: 25
+          }
+        }, "Submit"))), /*#__PURE__*/_reactDefault.default.createElement("br", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 106,
+            columnNumber: 23
+          }
+        }))
+      );
+    }
+  }
+  exports.default = AddConferenceResearch;
+  helpers.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}

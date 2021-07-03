@@ -1,0 +1,108 @@
+var helpers = require("../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+helpers.prelude(module);
+try {
+  var _parcelHelpers = require("@parcel/transformer-js/lib/esmodule-helpers.js");
+  _parcelHelpers.defineInteropFlag(exports);
+  var _react = require('react');
+  var _reactDefault = _parcelHelpers.interopDefault(_react);
+  var _reactSelect = require('react-select');
+  var _reactSelectDefault = _parcelHelpers.interopDefault(_reactSelect);
+  var _axios = require('axios');
+  var _axiosDefault = _parcelHelpers.interopDefault(_axios);
+  var _jsxFileName = "C:\\Users\\HP\\Desktop\\Assignments\\CMT-Frontend\\components\\Conferences\\checkConferenceEvents.js";
+  const initalStates = {
+    "conferenceList": [],
+    "conferenceOptions": [],
+    "selectedconference": ''
+  };
+  class CheckConference extends _react.Component {
+    constructor(props) {
+      super(props);
+      this.onSelected = this.onSelected.bind(this);
+      this.navigateToViewEvents = this.navigateToViewEvents.bind(this);
+      this.state = initalStates;
+    }
+    onSelected(e) {
+      this.setState({
+        selectedconference: e.value
+      });
+    }
+    navigateToViewEvents(e) {
+      window.location = `/conferenceEvents/${this.state.selectedconference}`;
+    }
+    componentDidMount() {
+      _axiosDefault.default.get('https://conference-tool-app.herokuapp.com/conference/readAllConferences').then(response => {
+        this.setState({
+          conferenceList: response.data.data
+        }, () => {
+          let data = [];
+          this.state.conferenceList.map((item, key) => {
+            let conference = {
+              value: item._id,
+              label: item.conferenceTitle
+            };
+            data.push(conference);
+          });
+          this.setState({
+            conferenceOptions: data
+          });
+        });
+      });
+    }
+    render() {
+      return (
+        /*#__PURE__*/_reactDefault.default.createElement("div", {
+          className: "container",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 46,
+            columnNumber: 13
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement("label", {
+          htmlFor: "conferenceList",
+          className: "form-label",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 47,
+            columnNumber: 17
+          }
+        }, "Select Conference"), /*#__PURE__*/_reactDefault.default.createElement(_reactSelectDefault.default, {
+          options: this.state.conferenceOptions,
+          onChange: this.onSelected,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 48,
+            columnNumber: 17
+          }
+        }), /*#__PURE__*/_reactDefault.default.createElement("br", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 51,
+            columnNumber: 19
+          }
+        }), /*#__PURE__*/_reactDefault.default.createElement("button", {
+          type: "submit",
+          className: "btn btn-primary",
+          onClick: this.navigateToViewEvents,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 53,
+            columnNumber: 17
+          }
+        }, "View Events"))
+      );
+    }
+  }
+  exports.default = CheckConference;
+  helpers.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}

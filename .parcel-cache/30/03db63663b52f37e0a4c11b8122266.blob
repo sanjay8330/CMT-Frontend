@@ -1,0 +1,1 @@
+module.exports = (require("./loaders/browser/js-loader")(require('./bundle-url').getBundleURL() + "html2canvas.HASH_REF_248ff878fcbaed51b173637f06e76234.js").catch(err => {delete module.bundle.cache[module.id]; throw err;})).then(() => module.bundle.root('6An6B'));

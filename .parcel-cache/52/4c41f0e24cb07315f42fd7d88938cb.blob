@@ -1,0 +1,15 @@
+<html>
+    <head>
+        <title>The Conference Management Tool</title>
+        <link href="70f978fcda3fad3d414596f306f75c06" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+        <link rel="stylesheet" href="78f4f92a2cdd9c27fca43e22d022215d">
+        <link rel="stylesheet" href="af25b1c41391edb6bfcaa32ef3555571" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    </head>
+
+    <body>
+        <div id="root"></div>
+    </body>
+    
+    <script src="0732c25c9045bf1c16e536d85fb50d6a"></script>
+    <script src="694d730b795f600f2a415f83b68a0973" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+    </html>
